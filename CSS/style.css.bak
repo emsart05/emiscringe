@@ -51,4 +51,227 @@ h6 {
 	margin-top: 20px;
 	margin-bottom: 5px;
 }
+		
+			
+			#about {
+				color: black;
+			}
+			#shadow {
+				box-shadow: 0 10px 20px #926697;
+			}
+			#right {
+				float: right;
+				width: 40%;
+			}
+			#adjust {
+				float: right;
+				width: auto;
+			}
+			#navbar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				margin-top: 0px;
+				padding-top: 5px;
+				box-shadow: 0 5px 10px #bc8ba4;
+				background-color: #d296b6;
+			}
+			
+			
+			.navbar-2 {
+				font-family: 'Great Vibes', cursive;
+				margin-bottom: 5px;
+				color: #250030;
+			}
+			body {
+				background-color: #ffe7f2;
+			}
+			h1 {
+				font-family: 'Great Vibes', cursive;
+				background-color: #d296b6;
+				text-align:center;
+			}
+			h2 {
+				font-family: 'Great Vibes', cursive;
+				background-color: #ffe7f2;
+				text-align:center;
+			}
+			h4 {
+				font-family: 'Roboto', sans-serif;
+				background-color: #ffe7f2;
+				text-align:center;
+			}
+			h6 {
+				background-color: #ffe7f2;
+				text-align:center;
+			}
+			p {
+				font-family: 'Roboto', sans-serif;
+				background-color: #ffe7f2;
+				text-align:center;
+			}
+			ul {
+				font-family: 'Roboto', sans-serif;
+				margin-left: 40px;
+			}
+			.navbar-text {
+				font-size: 40px;
+				margin-left: 10px;
+				margin-top: 7px;
+				font-family: 'Great Vibes', cursive;
+				color: #250030;
+			}
+			.navbar-text2 {
+				font-size: 30px;
+				margin-left:10px;
+				margin-top: 5px;
+				font-family: 'Great Vibes', cursive;
+			}
+			.drawing-3-height {
+				height: 220px;
+			}
+			.drawing-2-height {
+				height: 300px;
+			}
+			.drawing-5-height {
+				height:  225px;
+			}
+			.kosei-height {
+				height: 200px;
+			}
+			.lana-height {
+				height: 350px;
+			}
+			.painting-height {
+				height: 150px;
+			}
+			.fairy-hoe-height {
+				height: 300px;
+			}
+			.fairy-hoe2-height {
+				height: 225px;
+			}
+			.image-border {
+				border-width: 8px;
+				border-color: #a777ac;
+				border-radius: 10px;
+				border-style: solid;
+				margin: 15px;
+			}
+			.caption {
+				width: 15%;
+				border-style: solid;
+				border-width: 5px;
+				border-color: #e2b7d9;
+				margin-left: 73.5%;
+				font-size: 15px;
+				text-align:center;
+			}
+			.grid-container {
+				display: inline-grid;
+				grid-template-columns: auto auto auto;
+				background-color: #2196F3;
+				padding: 0px;
+			}
 
+			.grid-item {
+				background-color: rgba(255, 255, 255, 0.8);
+				border: 0px solid rgba(0, 0, 0, 0.8);
+				padding: 20px;
+				font-size: 30px;
+				text-align: center;
+			}
+			.margin-h1 {
+				margin-left: 160px;
+				width: 75%;
+			}
+			.div-border {
+				width: 70%;
+				margin-left: 15%;
+				border-width: 5px;
+				border-radius: 8px;
+				background-color: #e2b7d9;
+				box-shadow: 0 20px 20px #9f7997;);
+			}
+			.pink-back {
+				background-color: #e2b7d9;
+			}
+			.sketchbook-3-height {
+				height: 260px;
+				width: 19%;
+			}
+			.p-margin {
+				margin-bottom: 5px;
+			}
+			.height {
+				height: 2px;
+			}
+			.digital-height {
+				height: 300px;
+				width: 30%;
+			}
+			.cloves-height {
+				height 500 px;
+				width: 15%;
+			}
+			.lily-height {
+				height: 260px;
+			}
+			.h3-margin {
+				margin-left: 50px;
+			}
+			.ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			.li {
+				float: left;
+			}
+
+			.li a {
+				border-radius: 5px;
+				display: block;
+				padding: 8px;
+				background-color: #d296b6;
+				font-family: 'Great Vibes', cursive;
+				font-weight: 600;
+			}
+			
+			
+			#about {
+				color: black;
+			}
+			#shadow {
+				box-shadow: 0 10px 20px #926697;
+			}
+			#right {
+				float: right;
+				width: 40%;
+			}
+			#adjust {
+				float: right;
+				width: auto;
+			}
+			#navbar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				margin-top: 0px;
+				padding-top: 5px;
+				box-shadow: 0 5px 10px #bc8ba4;
+				background-color: #d296b6;
+			}
+			#sketchbook-1 {
+				font-size: 40px;
+			}
+			#sketchbook-2 {
+				font-size: 40px;
+			}
+			#sketchbook-3 {
+				font-size: 40px;
+			}
