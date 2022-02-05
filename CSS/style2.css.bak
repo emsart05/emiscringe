@@ -1,8 +1,0 @@
-img {
-    text-align: left;
-    width: 42%;
-    height: 750px;
-    background-color:white;
-    color: rgba(0, 0, 0, 1);
-    text-decoration: none;
-}
