@@ -7,6 +7,13 @@ font-family: 'Shizuru', cursive;
 font-family: 'Source Code Pro', monospace;
 font-family: 'Syne Mono', monospace; */
 
+a {
+    color: black;
+}
+a:hover {
+    color: palevioletred;
+}
+
 #nav {
     display: flex;
     flex-direction: column;
@@ -117,7 +124,7 @@ font-family: 'Syne Mono', monospace; */
     margin: 0px 0px 0px 89px;
     font-size: 18px;
     filter: opacity(10%);
-    z-index: 999;
+    z-index: 990;
 }
 
 #home-body {
@@ -127,7 +134,40 @@ font-family: 'Syne Mono', monospace; */
     animation-iteration-count: infinite;
 }
 
+#warning {
+    background-color: red;
+    font-size: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: opacity(0%);
+    animation-name: warning;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    z-index: -10;
+}
+#warn-text {
+    padding: 200px;
+}
+
 /* animations */
+
+@keyframes warning {
+    0% {
+        filter: opacity(100%);
+        z-index: 999;
+    }
+    50% {
+        filter: opacity(100%);
+        z-index: 999;
+    }
+    100% {
+        filter: opacity(0%);
+        z-index: 999;
+    }
+}
 
 @keyframes flash {
     0% {
@@ -290,9 +330,10 @@ font-family: 'Syne Mono', monospace; */
         background-color: rgb(255, 52, 103);
     }
 }
+
 @keyframes about {
     0% {
-        background-color: rgb(255, 123, 0);
+        background-color: rgb(230, 154, 84);
     }
     45% {
         background-color: rgb(255, 123, 0);
@@ -303,6 +344,15 @@ font-family: 'Syne Mono', monospace; */
     55% {
         background-color: rgb(255, 123, 0);
     }
+    60% {
+        background-color: rgb(255, 30, 0);
+    }
+    61%{
+        background-color: rgb(0, 34, 255);
+    }
+    65% {
+        background-color: rgb(255, 0, 0);
+    }
     69% {
         background-color: rgb(255, 123, 0);
     }
@@ -310,9 +360,115 @@ font-family: 'Syne Mono', monospace; */
         background-color: black;
     }
     75% {
-        background-color: rgb(255, 123, 0);
+        background-color: rgb(17, 0, 255);
     }
 }
+
+@keyframes bonk {
+    0% {
+        background-color: rgb(127, 255, 251);
+    }
+    20% {
+        background-color: rgb(16, 34, 34);
+    }
+    45% {
+        background-color: rgb(193, 255, 253);
+    }
+    50% {
+        background-color: rgb(127, 255, 251);
+    }
+    60% {
+        background-color: rgb(255, 0, 0);
+    }
+    61% {
+        background-color: rgb(255, 152, 152);
+    }
+    62% {
+        background-color: rgb(255, 0, 0);
+    }
+    65% {
+        background-color: rgb(0, 26, 255);
+    }
+    66% {
+        background-color: rgb(201, 206, 255);
+    }
+    67% {
+        background-color: rgb(0, 26, 255);
+    }
+    70% {
+        background-color: rgb(0, 255, 17);
+    }
+    71% {
+        background-color: rgb(197, 255, 201);
+    }
+    72% {
+        background-color: rgb(0, 255, 17);
+    }
+    75% {
+        background-color: rgb(127, 255, 251);
+    }
+    76% {
+        background-color: rgb(27, 69, 255);
+    }
+    77% {
+        background-color: rgb(255, 127, 127);
+    }
+    80% {
+        background-color: rgb(34, 255, 0);
+    }
+    81% {
+        background-color: rgb(201, 255, 207);
+    }
+    82% {
+        background-color: rgb(34, 255, 00);
+    }
+    90% {
+        background-color: rgb(241, 255, 255);
+    }
+}
+
+@keyframes img {
+    0% {
+        filter: opacity(100%);
+    }
+    49% {
+        filter: opacity(100%);
+    }
+    50% {
+        filter: opacity(0%);
+    }
+    54% {
+        filter: opacity(0%);
+    }
+    55% {
+        filter: opacity(100%);
+    }
+    69% {
+        filter: opacity(100%);
+    }
+    70% {
+        filter: opacity(0%);
+    }
+    74% {
+        filter: opacity(0%);
+    }
+    75% {
+        filter: opacity(100%);
+    }
+    89% {
+        filter: opacity(100%);
+    }
+    90% {
+        filter: opacity(0%);
+    }
+    94% {
+        filter: opacity(0%);
+    }
+    95% {
+        filter: opacity(100%);
+    }
+}
+
 
 /* contact page */
 #contact-body {
@@ -337,8 +493,21 @@ font-family: 'Syne Mono', monospace; */
 #cloves {
     width: 25%;
     position: absolute;
-    top: 0;
+    top: 0px;
     margin: 0px 0px 0px 400px;
+    animation-name: img;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    z-index: 11;
+}
+#cloves2 {
+    width: 50%;
+    position: absolute;
+    top: 0px;
+    right: 372px;
+    margin: 0px 0px 0px 400px;
+    filter: opacity(100%);
+    z-index: 10;
 }
 
 #vid {
@@ -352,6 +521,7 @@ font-family: 'Syne Mono', monospace; */
     right: 300px;
     bottom: 100px;
     font-family: 'Source Code Pro', monospace;
+    font-size: 30px;
 }
 
 #barcode {
@@ -360,6 +530,7 @@ font-family: 'Syne Mono', monospace; */
     font-family: 'Libre Barcode 39', cursive;
     filter: opacity(50%);
     font-size: 40px;
+    z-index: 50;
 }
 
 #barcode2 {
@@ -369,6 +540,7 @@ font-family: 'Syne Mono', monospace; */
     font-family: 'Libre Barcode 39', cursive;
     filter: opacity(50%);
     font-size: 40px;
+    z-index: 51;
 }
 
 /* about */
@@ -388,9 +560,123 @@ h1 {
     font-family: 'Syne Mono', monospace;
 }
 
+#hidden {
+    position: absolute;
+    right: 276px;
+    bottom: 124px;
+    filter: opacity(1%);
+    font-size: 50px;
+}
+
 /* bonkers */
 #bonk-body {
+    background-color: rgb(127, 255, 251);
     animation-name: bonk;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
+}
+
+#bonk-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+#title {
+    background-color: blueviolet;
+    margin: 0px;
+    padding: 10px;
+    font-size: 30px;
+}
+#title:hover {
+    background-color: rgb(220, 182, 255);
+}
+
+#dl-icon {
+    position: absolute;
+    top: 100px;
+    left: 1000px;
+    width: 3%;
+    z-index: 999;
+    border-radius: 100%;
+    border: 5px solid blue;
+}
+#dl-icon2 {
+    position: absolute;
+    top: 175px;
+    left: 50px;
+    width: 3%;
+    z-index: 999;
+    border-radius: 100%;
+    border: 5px solid blue;
+}
+#dl-icon3 {
+    position: absolute;
+    top: 250px;
+    left: 1000px;
+    width: 3%;
+    z-index: 999;
+    border-radius: 100%;
+    border: 5px solid blue;
+}
+#dl-icon4 {
+    position: absolute;
+    top: 325px;
+    left: 50px;
+    width: 3%;
+    z-index: 999;
+    border-radius: 100%;
+    border: 5px solid blue;
+}
+#dl-icon5 {
+    position: absolute;
+    top: 400px;
+    left: 1000px;
+    width: 3%;
+    z-index: 999;
+    border-radius: 100%;
+    border: 5px solid blue;
+}
+
+#emo-1 {
+    width: 10%;
+    position: absolute;
+    right: 50px;
+    bottom: 144px;
+}
+#emo-2 {
+    width: 10%;
+    position: absolute;
+    top: 76px;
+    left: 10px;
+}
+#emo-3 {
+    width: 10%;
+    position: absolute;
+    top: 576px;
+    left: 410px;
+}
+#emo-4 {
+    width: 30%;
+    position: absolute;
+    top: 276px;
+    left: 560px;
+}
+#emo-5 {
+    width: 20%;
+    position: absolute;
+    top: 126px;
+    left: 305px;
+}
+#emo-6 {
+    width: 20%;
+    position: absolute;
+    top: 76px;
+    right: 110px;
 }
