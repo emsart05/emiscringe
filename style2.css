@@ -76,7 +76,7 @@ a:hover {
     justify-content: center;
 }
 #glink {
-    position: absolute;
+    position: fixed;
     top: 50px;
     right: 730px;
     font-family: 'Syne Mono', monospace;
@@ -199,6 +199,71 @@ a:hover {
     animation-name: click9;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+}
+
+/* projects */
+
+#projects-body {
+    background-color: rgb(155, 199, 165);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    border: 1px solid black;
+}
+
+#python {
+    grid-column: auto;
+    grid-row: auto;
+    position: relative;
+    top: 20px;
+    padding: 10px;
+    font-family: 'Syne Mono', monospace;
+}
+#python-obj {
+    padding: 10px;
+    grid-row: auto;
+    grid-column: auto;
+    font-family: 'Syne Mono', monospace;
+}
+
+#projects-nav {
+    background-color: rgb(85, 126, 95);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#proj-nav-item {
+    padding: 10px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+
+}
+#proj-nav-item:hover {
+    padding: 10px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgb(160, 150, 95);
+}
+
+#proj-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgb(197, 253, 211);
+}
+#proj-foot-item {
+    padding: 10px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
 }
 
 /* animations */
