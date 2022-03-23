@@ -206,7 +206,7 @@ a:hover {
 #projects-body {
     background-color: rgb(155, 199, 165);
     display: grid;
-    grid-template-columns: auto;
+    padding: 10px;
     grid-template-rows: auto;
     border: 0px solid black;
 }
@@ -215,7 +215,7 @@ a:hover {
     grid-column: auto;
     grid-row: auto;
     position: relative;
-    top: 20px;
+    top: 30px;
     padding: 10px;
     font-family: 'Syne Mono', monospace;
 }
@@ -227,7 +227,7 @@ a:hover {
 }
 
 #projects-nav {
-    background-color: rgb(85, 126, 95);
+    background-color: rgb(81, 121, 91);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -235,15 +235,18 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
+    box-shadow: rgb(72, 100, 71) 0 0px 25px 5px;
 }
 #proj-nav-item {
-    padding: 10px;
+    padding: 18px;
+    font-size: 20px;
     color: black;
     font-family: 'Source Code Pro', monospace;
 
 }
 #proj-nav-item:hover {
-    padding: 10px;
+    padding: 18px;
+    font-size: 20px;
     color: black;
     font-family: 'Source Code Pro', monospace;
     background-color: rgb(160, 150, 95);
@@ -254,8 +257,8 @@ a:hover {
     flex-direction: row;
     justify-content: space-around;
     position: absolute;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
     width: 100%;
     font-family: 'Source Code Pro', monospace;
     background-color: rgb(197, 253, 211);
@@ -264,6 +267,33 @@ a:hover {
     padding: 10px;
     color: black;
     font-family: 'Source Code Pro', monospace;
+}
+#pytycoon-ss {
+    position: absolute;
+    top: 75px;
+    left: 375px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#ferrets {
+    font-family: 'Syne Mono', monospace;
+    position: relative;
+    left: 10px;
+    top: 40px;
+}
+#ferrets-site {
+    font-family: 'Syne Mono', monospace;
+    position: relative;
+    left: 10px;
+    top: 20px;
+}
+#ferrets-ss {
+    position: relative;
+    top: -30px;
+    left: 210px;
+    width: 300px;
+    border-radius: 10px;
 }
 
 /* animations */
