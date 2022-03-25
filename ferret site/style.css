@@ -91,3 +91,7 @@ img {
     padding: 5px;
     font-size: 35px;
 }
+
+#hello {
+    font-size: auto;
+}

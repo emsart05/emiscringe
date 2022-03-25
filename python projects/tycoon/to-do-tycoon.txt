@@ -1,0 +1,2 @@
+- Fix graduation process (command line still runs)
+- Make a music command and let the player pick what music they want. 
