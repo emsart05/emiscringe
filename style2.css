@@ -24,6 +24,7 @@ font-family: 'Syne Mono', monospace; */
 #nav-item {
     padding: 10px;
     font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
 }
 
 #sayori-body {
@@ -242,6 +243,7 @@ a:hover {
     font-size: 20px;
     color: black;
     font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
 
 }
 #proj-nav-item:hover {
@@ -275,6 +277,9 @@ a:hover {
     width: 300px;
     border-radius: 10px;
 }
+.signin {
+    color: black;
+}
 
 /* Ferrets site */
 #ferrets {
@@ -307,11 +312,13 @@ a:hover {
     width: 100%;
     justify-content: space-around;
     background-color: rgb(174, 38, 38);
+    box-shadow: rgb(109, 40, 40) 0 5px 15px 5px;
 }
 #sign-nav-item {
-    padding: 15px;
-    font-size: 20px;
+    padding: 20px;
+    font-size: 25px;
     font-family: 'Anton', sans-serif;
+    text-decoration: none;
 }
 #sign-nav-item:hover {
     padding: 15px;
@@ -328,9 +335,9 @@ a:hover {
     justify-content: center;
     align-self: center;
     position: absolute;
-    top: 100px;
-    left: 550px;
-    width: 25%;
+    top: 110px;
+    left: 500px;
+    width: 30%;
     background-color: rgb(218, 132, 101);
     border-radius: 15px;
     box-shadow: gray 0 5px 15px 5px;
@@ -343,31 +350,41 @@ a:hover {
 #signup-box-lable {
     padding: 0px;
     align-self: center;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #input-box1, #input-box2, #input-box3, #input-box4, #input-box5 {
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 0px;
+    font-size: 20px;
 }
 #submit-button {
-    padding: 3px;
+    padding: 5px;
     margin: 10px;
     font-family: Arial, Helvetica, sans-serif;
     align-self: center;
-    width: 25%;
+    width: 45%;
+    font-size: 20px;
     border-radius: 5px;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(184, 71, 77);
+    border-color: rgb(184, 71, 77);
 }
 #submit-button:hover {
-    padding: 3px;
-    margin: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    align-self: center;
-    width: 25%;
-    border-radius: 5px;
-    background-color: rgb(214, 214, 214);
+    background-color: rgb(172, 72, 72);
+    border-color: rgb(172, 72, 72);
 }
+input {
+    background-color: rgb(218, 132, 101);
+    border: 0px;
+    border-bottom: 2px solid black;
+    border-radius: 0px;
+}
+input::placeholder {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+    padding: 5px;
+}
+
 .email {
     color: black;
 }
