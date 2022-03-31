@@ -1,0 +1,652 @@
+
+/* 
+font-family: 'Anton', sans-serif;
+font-family: 'Libre Barcode 39', cursive;
+font-family: 'Press Start 2P', cursive;
+font-family: 'Shizuru', cursive;
+font-family: 'Source Code Pro', monospace;
+font-family: 'Syne Mono', monospace; */
+
+
+/* sayori */
+#sayori-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+    justify-content: space-around;
+    background-color: rgb(218, 97, 53);
+    z-index: 101;
+}
+#nav-item {
+    padding: 10px;
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+}
+
+#sayori-body {
+    background-color: rgb(165, 42, 73);
+    animation-name: sayori;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+a {
+    color: black;
+}
+a:hover {
+    color: rgb(207, 39, 39);
+}
+
+#gif {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* naked */
+#naked-body {
+    background-color: beige;
+}
+
+#image {
+    position: relative;
+    padding: 20px 50px;
+    left: 50px;
+}
+
+/* gggggggg */
+#g-body {
+    background-color: greenyellow;
+    animation-name: poop;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+#poop {
+    padding: 50px;
+}
+
+#link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#glink {
+    position: fixed;
+    top: 50px;
+    right: 730px;
+    font-family: 'Syne Mono', monospace;
+}
+
+#click-me {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: center;
+}
+
+/* click ids */
+#click {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 10px;
+    font-family: 'Syne Mono', monospace;
+}
+#click2 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 20px;
+    font-family: 'Syne Mono', monospace;
+}
+#click3 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 30px;
+    font-family: 'Syne Mono', monospace;
+}
+#click4 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 40px;
+    font-family: 'Syne Mono', monospace;
+}
+#click5 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 50px;
+    font-family: 'Syne Mono', monospace;
+}
+#click6 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 60px;
+    font-family: 'Syne Mono', monospace;
+}
+#click7 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 70px;
+    font-family: 'Syne Mono', monospace;
+}
+#click8 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 80px;
+    font-family: 'Syne Mono', monospace;
+}
+#click9 {
+    margin-top: 350px;
+    margin-left: 650px;
+    font-size: 90px;
+    font-family: 'Syne Mono', monospace;
+}
+
+/* click bodys */
+#click-body {
+    background-color: rgb(0, 255, 0);
+    animation-name: click;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body2 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body3 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click3;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body4 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click4;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body5 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click5;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body6 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click6;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body7 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click7;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body8 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click8;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+#click-body9 {
+    background-color: rgb(0, 255, 0);
+    animation-name: click9;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* projects */
+
+#projects-body {
+    background-color: rgb(155, 199, 165);
+    display: grid;
+    padding: 10px;
+    grid-template-rows: auto;
+    border: 0px solid black;
+}
+
+#python {
+    grid-column: auto;
+    grid-row: auto;
+    position: relative;
+    top: 30px;
+    padding: 10px;
+    font-family: 'Syne Mono', monospace;
+}
+#python-obj {
+    padding: 10px;
+    grid-row: auto;
+    grid-column: auto;
+    font-family: 'Syne Mono', monospace;
+}
+
+#projects-nav {
+    background-color: rgb(81, 121, 91);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: rgb(72, 100, 71) 0 0px 25px 5px;
+}
+#proj-nav-item {
+    padding: 18px;
+    font-size: 20px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+
+}
+#proj-nav-item:hover {
+    padding: 18px;
+    font-size: 20px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgb(160, 150, 95);
+}
+
+#proj-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Source Code Pro', monospace;
+    background-color: rgb(197, 253, 211);
+}
+#proj-foot-item {
+    padding: 10px;
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
+}
+#pytycoon-ss {
+    position: absolute;
+    top: 75px;
+    left: 375px;
+    width: 300px;
+    border-radius: 10px;
+}
+.signin {
+    color: black;
+}
+
+/* Ferrets site */
+#ferrets {
+    font-family: 'Syne Mono', monospace;
+    position: relative;
+    left: 10px;
+    top: 40px;
+}
+#ferrets-site {
+    font-family: 'Syne Mono', monospace;
+    position: relative;
+    left: 10px;
+    top: 20px;
+}
+#ferrets-ss {
+    position: relative;
+    top: -30px;
+    left: 210px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+/* Sign Up/In */
+#signup-nav {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-around;
+    background-color: rgb(174, 38, 38);
+    box-shadow: rgb(109, 40, 40) 0 5px 15px 5px;
+}
+#sign-nav-item {
+    padding: 20px;
+    font-size: 25px;
+    font-family: 'Anton', sans-serif;
+    text-decoration: none;
+}
+#sign-nav-item:hover {
+    background-color: rgb(255, 168, 168);
+}
+#sign-body {
+    background-color: rgb(255, 205, 205);
+}
+#signup-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    top: 110px;
+    left: 500px;
+    width: 30%;
+    background-color: rgb(218, 132, 101);
+    border-radius: 15px;
+    box-shadow: gray 0 5px 15px 5px;
+}
+#signup-box-item {
+    padding: 0px;
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#signup-box-lable {
+    padding: 0px;
+    align-self: center;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#input-box1, #input-box2, #input-box3, #input-box4, #input-box5 {
+    padding: 5px;
+    border-radius: 0px;
+    font-size: 20px;
+}
+#submit-button {
+    padding: 5px;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    align-self: center;
+    width: 45%;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: rgb(184, 71, 77);
+    border-color: rgb(184, 71, 77);
+}
+#submit-button:hover {
+    background-color: rgb(172, 72, 72);
+    border-color: rgb(172, 72, 72);
+}
+input {
+    background-color: rgb(218, 132, 101);
+    border: 0px;
+    border-bottom: 2px solid black;
+    border-radius: 0px;
+}
+input::placeholder {
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+    padding: 5px;
+}
+
+.email {
+    color: black;
+}
+.firstName {
+    color: black;
+}
+.lastName {
+    color: black;
+}
+.username {
+    color: black;
+}
+.password {
+    color: black;
+}
+
+/* animations */
+
+@keyframes sayori {
+    0% {
+        background-color: rgb(165, 42, 73);
+    }
+    19% {
+        background-color: rgb(165, 42, 73);
+    }
+    20% {
+        background-color: rgb(255, 218, 193);
+    }
+    21% {
+        background-color: rgb(165, 42, 73);
+    }
+    29% {
+        background-color: rgb(165, 42, 73);
+    }
+    30% {
+        background-color: rgb(255, 218, 193);
+    }
+    31% {
+        background-color: rgb(165, 42, 73);
+    }
+    39% {
+        background-color: rgb(165, 42, 73);
+    }
+    40% {
+        background-color: rgb(255, 218, 193);
+    }
+    41% {
+        background-color: rgb(165, 42, 73);
+    }
+    49% {
+        background-color: rgb(165, 42, 73);
+    }
+    50% {
+        background-color: rgb(255, 218, 193);
+    }
+    51% {
+        background-color: rgb(165, 42, 73);
+    }
+    59% {
+        background-color: rgb(165, 42, 73);
+    }
+    60% {
+        background-color: rgb(255, 218, 193);
+    }
+    61% {
+        background-color: rgb(165, 42, 73);
+    }
+    90% {
+        background-color: rgb(165, 42, 73);
+    }
+    91% {
+        background-color: rgb(255, 218, 193);
+    }
+    92% {
+        background-color: rgb(165, 42, 73);
+    }
+}
+
+@keyframes poop {
+    0% {
+        background-color: greenyellow;
+    }
+    2% {
+        background-color: rgb(255, 238, 0);
+    }
+    4% {
+        background-color: greenyellow;
+    }
+    8% {
+        background-color: greenyellow;
+    }
+    10% {
+        background-color: rgb(225, 255, 180);
+    }
+    12% {
+        background-color: greenyellow;
+    }
+    20% {
+        background-color: greenyellow;
+    }
+    22% {
+        background-color: rgb(255, 0, 0);
+    }
+    24% {
+        background-color: greenyellow;
+    }
+    30% {
+        background-color: greenyellow;
+    }
+    38% {
+        background-color: greenyellow;
+    }
+    40% {
+        background-color: rgb(106, 112, 41);
+    }
+    42% {
+        background-color: greenyellow;
+    }
+    58% {
+        background-color: greenyellow;
+    }
+    50% {
+        background-color: rgb(119, 101, 42);
+    }
+    51% {
+        background-color: greenyellow;
+    }
+    58% {
+        background-color: greenyellow;
+    }
+    60% {
+        background-color: rgb(148, 143, 67);
+    }
+    62% {
+        background-color: greenyellow;
+    }
+    68% {
+        background-color: greenyellow;
+    }
+    70% {
+        background-color: rgb(38, 0, 255);
+    }
+    72% {
+        background-color: greenyellow;
+    }
+    78% {
+        background-color: greenyellow;
+    }
+    80% {
+        background-color: rgb(84, 122, 65);
+    }
+    82% {
+        background-color: greenyellow;
+    }
+    88% {
+        background-color: greenyellow;
+    }
+    90% {
+        background-color: rgb(255, 0, 0);
+    }
+    92% {
+        background-color: greenyellow;
+    }
+    100% {
+        background-color: greenyellow;
+    }
+}
+
+@keyframes click {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(0, 255, 0);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: red;
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: blue;
+    }
+}
+@keyframes click2 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(32, 180, 32);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(199, 33, 33);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(34, 34, 204);
+    }
+}
+@keyframes click3 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(45, 170, 45);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(165, 43, 43);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(34, 34, 134);
+    }
+}
+@keyframes click4 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(29, 109, 29);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(104, 23, 23);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(25, 25, 107);
+    }
+}
+@keyframes click5 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(21, 82, 21);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(90, 20, 20);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(17, 17, 66);
+    }
+}
+@keyframes click6 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(29, 187, 129);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(206, 86, 31);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(102, 31, 196);
+    }
+}
+@keyframes click7 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(95, 138, 95);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(169, 117, 117);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(107, 107, 156);
+    }
+}
+@keyframes click8 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(162, 255, 162);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(255, 158, 158);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(165, 165, 255);
+    }
+}
+@keyframes click9 {
+    0%, 15%, 30%, 45%, 60%, 75%, 90% {
+        background-color: rgb(41, 53, 41);
+    }
+    5%, 20%, 35%, 50%, 65%, 80%, 95% {
+        background-color: rgb(90, 60, 60);
+    }
+    10%, 25%, 40%, 55%, 70%, 85%, 100% {
+        background-color: rgb(58, 58, 82);
+    }
+}
