@@ -266,8 +266,9 @@ a:hover {
     background-color: rgb(197, 253, 211);
 }
 #proj-foot-item {
-    padding: 10px;
+    padding: 15px;
     color: black;
+    font-size: 15px;
     font-family: 'Source Code Pro', monospace;
     text-decoration: none;
 }
