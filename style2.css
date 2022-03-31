@@ -269,6 +269,7 @@ a:hover {
     padding: 10px;
     color: black;
     font-family: 'Source Code Pro', monospace;
+    text-decoration: none;
 }
 #pytycoon-ss {
     position: absolute;
@@ -321,9 +322,6 @@ a:hover {
     text-decoration: none;
 }
 #sign-nav-item:hover {
-    padding: 15px;
-    font-size: 20px;
-    font-family: 'Anton', sans-serif;
     background-color: rgb(255, 168, 168);
 }
 #sign-body {
