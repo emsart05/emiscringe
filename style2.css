@@ -11,19 +11,20 @@ font-family: 'Syne Mono', monospace; */
 /* sayori */
 #sayori-nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
+    width: 100%;
     padding: 10px;
     justify-content: space-around;
-    background-color: rgb(218, 97, 53);
     z-index: 101;
 }
 #nav-item {
     padding: 10px;
-    font-family: 'Source Code Pro', monospace;
+    font-size: 23px;
+    font-weight: 900;
+    font-family: 'Red Hat Display', sans-serif;
     text-decoration: none;
 }
 
