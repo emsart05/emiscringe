@@ -1,4 +1,4 @@
-const container = document.querySelector("div")
+const container = document.getElementById("grid")
 
 function blackImageConfig(black) {
     black.src = "./images/black.png"
@@ -11,15 +11,11 @@ function redImageConfig(red) {
 }
 
 function positionSet(array, row, column) {
-    console.log(array)
-    console.log(row)
-    console.log(column)
-
     array.style.gridRowStart = row
     array.style.gridRowEnd = row + 1
 
     array.style.gridColumnStart = column
-    array.style.gridColumnStart = column
+    array.style.gridColumnEnd = column + 1
 }
 
 class Piece {
@@ -119,11 +115,140 @@ for(var i = 0; i < 12; i++) {
     pieceObjs.push(new Piece(i, null, boxObjs[i].row, boxObjs[i].column, "black"))
 }
 
+// Black piece placement
+var pieceCounter = 0
 for(var box = 0; box < boxObjs.length; box++) {
     if(boxObjs[box].color == "black") {
-        // console.log(blackPieces[box])
-        // console.log(boxObjs[box].row)
-        // console.log(boxObjs[box].column)
-        positionSet(blackPieces[box], boxObjs[box].row, boxObjs[box].column)
+        if(box < 24) {
+            positionSet(blackPieces[pieceCounter], boxObjs[box].row, boxObjs[box].column)
+            boxAr[box].appendChild(blackPieces[pieceCounter])
+            pieceCounter++
+        }
     }
 }
+
+// Red piece placement
+pieceCounter = 0
+for(var box = 40; box < boxObjs.length; box++) {
+    if(boxObjs[box].color == "black") {
+        if(box < 64) {
+            positionSet(redPieces[pieceCounter], boxObjs[box].row, boxObjs[box].column)
+            boxAr[box].appendChild(redPieces[pieceCounter])
+            pieceCounter++
+        }
+    }
+}
+
+// Score table elements
+let blackLeft = document.getElementById("black-left")
+let redLeft = document.getElementById("red-left")
+let blackTaken = document.getElementById("black-taken")
+let redTaken = document.getElementById("red-taken")
+
+blackLeft.innerHTML = 12; redLeft.innerHTML = 12
+blackTaken.innerHTML = 0; redTaken.innerHTML = 0
+
+// Mechanics
+let gameInit = false
+
+let clicked = []
+let pieceClicked = false
+let blackClick = false; let redClick = false
+
+blackPieces.forEach(piece => {
+    piece.onclick = function() {
+        //Check if game has started
+        if(!gameInit) {
+            gameInit = true
+        }
+
+        // If no piece is selected
+        if(!blackClick && !pieceClicked) {
+            piece.style.border = "3px solid blue"
+            blackClick = true
+            pieceClicked = true
+            clicked.push(piece)
+            console.log(clicked[0])
+        }
+
+        // If the piece clicked has been selected
+        else if(blackClick && clicked[0] == piece) {
+            piece.style.border = "0px solid blue"
+            blackClick = false
+            pieceClicked = false
+            clicked.pop()
+        }
+    }
+});
+
+redPieces.forEach(piece => {
+    piece.onclick = function() {
+        //Check if game has started
+        if(gameInit) {
+
+            // If no piece is selected
+            if(!redClick && !pieceClicked) {
+                piece.style.border = "3px solid blue"
+                redClick = true
+                pieceClicked = true
+                clicked.push(piece)
+            }
+
+            // If the piece clicked has been selected
+            else if(redClick && clicked[0] == piece) {
+                piece.style.border = "0px solid blue"
+                redClick = false
+                pieceClicked = false
+                clicked.pop()
+            }
+        }
+
+        // If red tried to make the first move
+        else {
+            console.log("Black goes first.")
+        }
+    }
+});
+
+boxAr.forEach(box => {
+    // Box grid position
+    const rowStart = box.style.gridRowStart // Top
+    const rowEnd = box.style.gridRowEnd // Bottom
+    const colStart = box.style.gridColumnStart // Left
+    const colEnd = box.style.gridColumnEnd // Right
+
+    box.onclick = function() {
+        if(!box.hasChildNodes()) {
+            if(clicked.length > 0) {
+                // Clicked piece grid position
+                let pieceRowStart = clicked[0].style.gridRowStart
+                let pieceRowEnd = clicked[0].style.gridRowEnd
+                let pieceColStart = clicked[0].style.gridColumnStart
+                let pieceColEnd = clicked[0].style.gridColumnEnd
+    
+                if(rowStart == Number(pieceRowStart) + 1) {
+                    if(colStart == pieceColStart + 1 || colStart == pieceColStart - 1) {
+                        Number(pieceColStart) = colStart
+                        Number(pieceColEnd) = colEnd
+                        Number(pieceRowEnd) = rowEnd
+                        Number(pieceRowStart) = rowStart
+
+                        console.log(Number(pieceColEnd))
+                    }
+    
+                    // Tried to move piece to an ivnalid spot
+                    else {
+                        console.log("Failed to move this piece.")
+                    }
+                }
+    
+                // Tried to move piece to an ivnalid spot
+                else {
+                    console.log("Failed to move this piece.")
+                }
+            }
+        }
+    }
+});
+
+

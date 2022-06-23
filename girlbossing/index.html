@@ -8,7 +8,49 @@
     <title>Script</title>
 </head>
 <body>
+    <table>
+        <!-- Top row -->
+        <tr>
+            <th class="tbl-head">
+
+            </th>
+            <th class="tbl-head">
+                Black
+            </th>
+            <th class="tbl-head">
+                Red
+            </th>
+        </tr>
+
+        <!-- Second row -->
+        <tr>
+            <th class="left-col">
+                Pieces left
+            </th>
+            <th id="black-left"></th>
+            <th id="red-left"></th>
+        </tr>
+
+        <!-- Third row -->
+        <tr>
+            <th class="left-col">
+                Pieces taken
+            </th>
+            <th id="black-taken"></th>
+            <th id="red-taken"></th>
+        </tr>
+    </table>
+
     <div id="grid">
+    </div>
+
+    <div id="rules">
+        <h2>Rules:</h2>
+        <p>1. Black goes first</p>
+        <p>2. Pieces must stay on black tiles</p>
+        <p>3. Pieces can only move diagonal by one space</p>
+        <p>4. Exception to rule 3 is if you are jumping an opponent's piece</p>
+        <p>5. The tile on the other side of the piece you are jumping must be clear</p>
     </div>
     
     <script src="index.js"></script>
