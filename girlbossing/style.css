@@ -1,0 +1,19 @@
+#grid {
+    position: relative;
+    top: 25px;
+    display: grid;
+    width: 600px;
+    height: 600px;
+    grid-gap: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: 8px solid black;
+    grid-template-columns: 75px 75px 75px 75px 75px 75px 75px 75px;
+    grid-template-rows: 75px 75px 75px 75px 75px 75px 75px 75px;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
