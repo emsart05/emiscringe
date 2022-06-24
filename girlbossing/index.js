@@ -226,14 +226,14 @@ boxAr.forEach(box => {
                 let pieceColStart = clicked[0].style.gridColumnStart
                 let pieceColEnd = clicked[0].style.gridColumnEnd
     
-                if(rowStart == Number(pieceRowStart) + 1) {
-                    if(colStart == pieceColStart + 1 || colStart == pieceColStart - 1) {
-                        Number(pieceColStart) = colStart
-                        Number(pieceColEnd) = colEnd
-                        Number(pieceRowEnd) = rowEnd
-                        Number(pieceRowStart) = rowStart
+                if(Number(rowStart) == Number(pieceRowStart) + 1) {
+                    if(Number(colStart) == Number(pieceColStart) + 1 || Number(colStart) == Number(pieceColStart) - 1) {
+                        pieceColStart = colStart
+                        pieceColEnd = colEnd
+                        pieceRowEnd = rowEnd
+                        pieceRowStart = rowStart
 
-                        console.log(Number(pieceColEnd))
+                        console.log("Piece moved")
                     }
     
                     // Tried to move piece to an ivnalid spot
@@ -244,6 +244,8 @@ boxAr.forEach(box => {
     
                 // Tried to move piece to an ivnalid spot
                 else {
+                    console.log(Number(rowStart) + 1)
+                    console.log(Number(pieceRowStart) + 1)
                     console.log("Failed to move this piece.")
                 }
             }
