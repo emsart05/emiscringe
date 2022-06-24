@@ -213,6 +213,21 @@ a:hover {
     border: 0px solid black;
 }
 
+#javascript, #checkers {
+    position: relative;
+    top: -30px;
+    left: 10px;
+    font-family: 'Syne Mono', monospace;
+}
+
+#checkers-img {
+    position: relative;
+    left: 280px;
+    top: -55px;
+    width: 300px;
+    border-radius: 10px;
+}
+
 #python {
     grid-column: auto;
     grid-row: auto;
@@ -322,6 +337,7 @@ a:hover {
     font-size: 25px;
     font-family: 'Anton', sans-serif;
     text-decoration: none;
+    z-index: 100;
 }
 #sign-nav-item:hover {
     background-color: rgb(255, 168, 168);
@@ -341,6 +357,7 @@ a:hover {
     background-color: rgb(218, 132, 101);
     border-radius: 15px;
     box-shadow: gray 0 5px 15px 5px;
+    z-index: 5;
 }
 #signup-box-item {
     padding: 0px;
@@ -650,5 +667,12 @@ input::placeholder {
     }
     10%, 25%, 40%, 55%, 70%, 85%, 100% {
         background-color: rgb(58, 58, 82);
+    }
+}
+
+@media (max-width: 500px) {
+    #proj-nav-item {
+        font-size: 15px;
+        padding: 5px 0px 5px 0px;
     }
 }
