@@ -40,6 +40,7 @@ let boxAr = [] // List of boxes
 let boxObjs = []
 var row = 1; var col = 1;
 
+// Creating 8x8 box grid
 for(var i = 0; i < 64; i++) {
     boxAr.push(document.createElement("h1"))
     var boxStyle = boxAr[i].style
@@ -155,6 +156,7 @@ let clicked = []
 let pieceClicked = false
 let blackClick = false; let redClick = false
 
+// Black piece onclick
 blackPieces.forEach(piece => {
     piece.onclick = function() {
         //Check if game has started
@@ -181,6 +183,7 @@ blackPieces.forEach(piece => {
     }
 });
 
+// Red piece onclick
 redPieces.forEach(piece => {
     piece.onclick = function() {
         //Check if game has started
@@ -210,6 +213,7 @@ redPieces.forEach(piece => {
     }
 });
 
+// Box onclick
 boxAr.forEach(box => {
 
     box.onclick = function() {
@@ -227,27 +231,45 @@ boxAr.forEach(box => {
     
                 if(Number(rowStart) == Number(pieceRowStart) + 1) {
                     if(Number(colStart) == Number(pieceColStart) + 1 || Number(colStart) == Number(pieceColStart) - 1) {
+                        // Set piece properties
                         clicked[0].style.gridColumnStart = colStart
                         clicked[0].style.gridColumnEnd = colEnd
                         clicked[0].style.gridRowEnd = rowEnd
                         clicked[0].style.gridRowStart = rowStart
 
+                        // Move piece to new parent node
                         clicked[0].parentNode.removeChild(clicked[0])
-                        clicked[0].style.border = "0px solid blue"
                         box.appendChild(clicked[0])
+
+                        // Unselect piece
+                        pieceClicked = false; redClick = false; blackClick = false
+                        clicked[0].style.border = "0px solid blue"
                         clicked.pop()
 
+                        // Console
                         console.log("Piece moved")
                     }
     
                     // Tried to move piece to an ivnalid spot
                     else {
+                        // Unselect piece
+                        pieceClicked = false; redClick = false; blackClick = false
+                        clicked[0].style.border = "0px solid blue"
+                        clicked.pop()
+
+                        // Console
                         console.log("Failed to move this piece.")
                     }
                 }
     
                 // Tried to move piece to an ivnalid spot
                 else {
+                    // Unselect piece
+                    pieceClicked = false; redClick = false; blackClick = false
+                    clicked[0].style.border = "0px solid blue"
+                    clicked.pop()
+
+                    // Console
                     console.log("Failed to move this piece.")
                 }
             }
