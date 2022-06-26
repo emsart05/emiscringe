@@ -211,27 +211,31 @@ redPieces.forEach(piece => {
 });
 
 boxAr.forEach(box => {
-    // Box grid position
-    const rowStart = box.style.gridRowStart // Top
-    const rowEnd = box.style.gridRowEnd // Bottom
-    const colStart = box.style.gridColumnStart // Left
-    const colEnd = box.style.gridColumnEnd // Right
 
     box.onclick = function() {
         if(!box.hasChildNodes()) {
             if(clicked.length > 0) {
+                // Box grid position
+                let rowStart = box.style.gridRowStart // Top
+                let rowEnd = box.style.gridRowEnd // Bottom
+                let colStart = box.style.gridColumnStart // Left
+                let colEnd = box.style.gridColumnEnd // Right
+
                 // Clicked piece grid position
                 let pieceRowStart = clicked[0].style.gridRowStart
-                let pieceRowEnd = clicked[0].style.gridRowEnd
                 let pieceColStart = clicked[0].style.gridColumnStart
-                let pieceColEnd = clicked[0].style.gridColumnEnd
     
                 if(Number(rowStart) == Number(pieceRowStart) + 1) {
                     if(Number(colStart) == Number(pieceColStart) + 1 || Number(colStart) == Number(pieceColStart) - 1) {
-                        pieceColStart = colStart
-                        pieceColEnd = colEnd
-                        pieceRowEnd = rowEnd
-                        pieceRowStart = rowStart
+                        clicked[0].style.gridColumnStart = colStart
+                        clicked[0].style.gridColumnEnd = colEnd
+                        clicked[0].style.gridRowEnd = rowEnd
+                        clicked[0].style.gridRowStart = rowStart
+
+                        clicked[0].parentNode.removeChild(clicked[0])
+                        clicked[0].style.border = "0px solid blue"
+                        box.appendChild(clicked[0])
+                        clicked.pop()
 
                         console.log("Piece moved")
                     }
@@ -244,8 +248,6 @@ boxAr.forEach(box => {
     
                 // Tried to move piece to an ivnalid spot
                 else {
-                    console.log(Number(rowStart) + 1)
-                    console.log(Number(pieceRowStart) + 1)
                     console.log("Failed to move this piece.")
                 }
             }
