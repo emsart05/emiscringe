@@ -5,7 +5,7 @@ const projects = document.createElement("a")
 // WEB ART
 webArtLink.className = "navLinks"
 webArtLink.innerHTML = "Web 'Art'"
-webArtLink.href = "https://www.emiscringe.ml"
+webArtLink.href = "https://www.emiscringe.ml/webArt"
 
 // PROJECTS
 projects.className = "navLinks"
