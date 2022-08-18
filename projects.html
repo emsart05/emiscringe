@@ -7,7 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Barcode+39&family=Press+Start+2P&family=Shizuru&family=Source+Code+Pro&family=Syne+Mono&display=swap" rel="stylesheet">
-   <!-- other -->
+   <!-- jQuery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- other -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,59 +17,62 @@
 </head>
 
 <nav id="projects-nav">
-    <a href="index.html" id="proj-nav-item">Home</a>
-    <a href="sayori.html" id="proj-nav-item">Sayori</a>
-    <a href="ggg.html" id="proj-nav-item">ggggg</a>
-    <a href="bonkers.html" id="proj-nav-item">bonkers</a>
-    <a href="http://localhost/testsite/hub/ok/database/signup.php" id="proj-nav-item" onclick="alertPopup()">Sign Up</a> <!--http://localhost/testsite/hub/ok/signup.php-->
-    <a href="" id="proj-nav-item" class="signin" onclick="alertPopup()">Sign In</a>
+    <a href="index.html" class="proj-nav-item">Home</a>
+    <a href="sayori.html" class="proj-nav-item">Sayori</a>
+    <a href="ggg.html" class="proj-nav-item">ggggg</a>
+    <a href="bonkers.html" class="proj-nav-item">bonkers</a>
+    <a href="http://localhost/testsite/hub/ok/database/signup.php" class="proj-nav-item" onclick="alertPopup()">Sign Up</a> <!--http://localhost/testsite/hub/ok/signup.php-->
+    <a href="" class="proj-nav-item" onclick="alertPopup()">Sign In</a>
 </nav>
 
 <body id="projects-body">
 
     <!-- Python -->
-    <h1 id="python">
-        Python projects:
-    </h1>
+    <div class="proj-block">
+        <h1 class="proj-title">Python projects:</h1>
 
-    <article>
-        <a href="python projects.zip" download id="python-obj">
-            First full console-based tycoon game.
-        </a>
-    </article>
-    <img href src="images/Screenshot 2022-03-22 202721.jpg" id="pytycoon-ss">
+        <article>
+            <a href="python projects.zip" download class="cap">First full console-based tycoon game.</a>
+        </article>
+        <img href src="images/Screenshot 2022-03-22 202721.jpg" class="proj-ss">  
+    </div>
+    
 
     <!-- Ferrets -->
-    <h1 id="ferrets">
-        Ferrets:
-    </h1>
+    <div class="proj-block">
+        <h1 class="proj-title">Ferrets:</h1>
 
-    <article>
-        <a href="ferret site/index.html" id="ferrets-site">
-            A site about ferrets.
-        </a>
-    </article>
-    <img href src="images/Screenshot 2022-03-22 203926.jpg" id="ferrets-ss">
+        <caption>
+            <a href="ferret site/index.html" class="cap">A site about ferrets.</a>
+        </caption>
+        <img href src="images/Screenshot 2022-03-22 203926.jpg" class="proj-ss">
+    </div>
+    
     
     <!-- Javascript -->
-    <h1 id="javascript">
-        Javascript projects:
-    </h1>
+    <div class="proj-block">
+        <h1 class="proj-title">Javascript projects:</h1>
 
-    <article>
-        <a href="girlbossing/index.html" id="checkers">
-            An unfinished checkers game
-        </a>
-    </article>
-    <img href src="images/Screenshot 2022-06-23 232651.jpg" id="checkers-img">
+        <caption>
+            <a href="girlbossing/index.html" class="cap">An unfinished checkers game.</a>
+        </caption>
+        <img href src="images/Screenshot 2022-06-23 232651.jpg" class="proj-ss">
+        
+        <caption>
+            <a href="hangman/index.html" class="cap">Almost finished hangman game.</a>
+        </caption>
+        <img href src="images/hangmanss.jpg" class="proj-ss">
+    </div>
+    
 
     <script src="sign.js"></script>
+    <script src="proj.js"></script>
 </body>
 
-<footer id="proj-footer">
+<!-- <footer id="proj-footer">
     <a id="proj-foot-item"><b>© 2022 emisgringe.ml</b></a>
     <a href="contact.html" id="proj-foot-item">Contact</a> 
     <a href="about.html" id="proj-foot-item">About</a>
-</footer>
+</footer> -->
 
 </html>

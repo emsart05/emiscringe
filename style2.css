@@ -206,68 +206,87 @@ a:hover {
 /* projects */
 
 #projects-body {
-    background-color: rgb(155, 199, 165);
-    display: grid;
-    padding: 10px;
-    grid-template-rows: auto;
+    row-gap: 25px;
+    top: 75px;
+    left: 0px;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
     border: 0px solid black;
+    background-color: rgb(155, 173, 199);
+}
+.proj-block {
+    top: 35px;
+    width: 90%;
+    left: 25px;
+    margin: 0px;
+    padding: 0px;
+    display: grid;
+    align-items: end;
+    position: relative;
+    border: 0px solid black;
+    /* grid-template-columns: repeat(3, 33%); */
+    font-family: 'Press Start 2P', cursive;
+}
+.cap {
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(18, 50, 77);
+    position: relative;
+    text-decoration: none;
+    border: 0px solid black;
+    font-family: 'Source Code Pro', monospace;
+}
+.cap:hover {
+    color: rgb(44, 109, 161);
 }
 
-#javascript, #checkers {
+.proj-ss {
     position: relative;
-    top: -30px;
-    left: 10px;
-    font-family: 'Syne Mono', monospace;
-}
-
-#checkers-img {
-    position: relative;
-    left: 280px;
-    top: -55px;
     width: 300px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 10px;
 }
 
-#python {
-    grid-column: auto;
-    grid-row: auto;
+.proj-title {
     position: relative;
-    top: 30px;
-    padding: 10px;
-    font-family: 'Syne Mono', monospace;
-}
-#python-obj {
-    padding: 10px;
-    grid-row: auto;
-    grid-column: auto;
-    font-family: 'Syne Mono', monospace;
+    margin: 0px;
+    font-size: 25px;
+    border: 0px solid black;
 }
 
 #projects-nav {
-    background-color: rgb(81, 121, 91);
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: rgb(72, 100, 71) 0 0px 25px 5px;
+    z-index: 100;
+    box-shadow: rgb(131, 151, 177) 0 15px 10px;
+    background-color: rgb(131, 151, 177) ;
+    font-family: 'Press Start 2P', cursive;
 }
-#proj-nav-item {
+.proj-nav-item {
     padding: 18px;
     font-size: 20px;
     color: black;
-    font-family: 'Source Code Pro', monospace;
     text-decoration: none;
 
 }
-#proj-nav-item:hover {
-    padding: 18px;
-    font-size: 20px;
-    color: black;
-    font-family: 'Source Code Pro', monospace;
-    background-color: rgb(160, 150, 95);
+.proj-nav-item:hover {
+    color: rgb(46, 49, 80);
 }
 
 #proj-footer {
@@ -279,7 +298,7 @@ a:hover {
     left: 0;
     width: 100%;
     font-family: 'Source Code Pro', monospace;
-    background-color: rgb(197, 253, 211);
+    background-color: rgb(163, 208, 248);
 }
 #proj-foot-item {
     padding: 15px;
@@ -288,37 +307,10 @@ a:hover {
     font-family: 'Source Code Pro', monospace;
     text-decoration: none;
 }
-#pytycoon-ss {
-    position: absolute;
-    top: 75px;
-    left: 375px;
-    width: 300px;
-    border-radius: 10px;
-}
 .signin {
     color: black;
 }
 
-/* Ferrets site */
-#ferrets {
-    font-family: 'Syne Mono', monospace;
-    position: relative;
-    left: 10px;
-    top: 40px;
-}
-#ferrets-site {
-    font-family: 'Syne Mono', monospace;
-    position: relative;
-    left: 10px;
-    top: 20px;
-}
-#ferrets-ss {
-    position: relative;
-    top: -30px;
-    left: 210px;
-    width: 300px;
-    border-radius: 10px;
-}
 
 /* Sign Up/In */
 #signup-nav {
