@@ -9,6 +9,7 @@ var charBox = document.getElementById("blanks")
 var main = document.getElementById("main")
 var hint = document.getElementById("hint")
 var body = document.querySelector("body")
+var numOfBlanks = $("#numOfBlanks")
 
 var inputBox = document.createElement("input")
 var subButton = document.createElement("input")
@@ -170,6 +171,15 @@ function twoCharConfig(index, char, index2, char2, filledChars)
     filledChars += 2
     return filledChars
 }
+function threeCharConfig(index, char, index2, char2, index3, char3, filledChars)
+{
+    blanksList[index].innerHTML = char
+    blanksList[index2].innerHTML = char2
+    blanksList[index3].innerHTML = char3
+    inputBox.value = ""
+    filledChars += 3
+    return filledChars
+}
 
 // Display hint
 function displayHint(phraseHint)
@@ -193,10 +203,14 @@ class phraseClass
 // People phrases
 let taylorSwift = new phraseClass("Taylor Swift", 11, "Popular singer. Switched from country to pop.")
 taylorSwift.blankList = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+let purpleGuy = new phraseClass("Purple Guy", 9, "The man behind the slaughter.")
+purpleGuy.blankList = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
 
 // Places phrases
 let ohio = new phraseClass("Ohio", 4, "Corn state.")
 ohio.blankList = ["_", "_", "_", "_"]
+let grandCanyon = new phraseClass("Grand Canyon", 11, "Famous crater in the earth.")
+grandCanyon.blankList = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
 
 // Items phrases
 let pencil = new phraseClass("Pencil", 6, "Used for writing.")
@@ -235,6 +249,7 @@ class category
 
         // Get phrase
         selectedPhrase = getRandom(this.phrases)
+        numOfBlanks.innerHTML = selectedPhrase.phrase.length
 
         // Check for spaces
         let test = selectedPhrase.phrase.search(" ")
@@ -269,7 +284,6 @@ class category
             if(i == test)
             {
                 blanksList.push(document.createElement("p"))
-                console.log(blanksList[test].style)
                 blanksList[test].innerHTML = ".."
                 blanksList[test].style.color = "rgb(171, 196, 211)"
                 charBox.appendChild(blanksList[test])
@@ -279,6 +293,8 @@ class category
                 blanksList[i+1].innerHTML = blank
                 charBox.appendChild(blanksList[i+1])
                 i += 2
+
+                numOfBlanks.innerHTML = selectedPhrase.phrase.length-1
             }
             else
             {
@@ -291,10 +307,10 @@ class category
     }
 }
 let peopleCat = new category("People", peopleCheck)
-peopleCat.phrases = [taylorSwift]
+peopleCat.phrases = [taylorSwift, purpleGuy]
 
 let placesCat = new category("Places", placesCheck)
-placesCat.phrases = [ohio]
+placesCat.phrases = [ohio, grandCanyon]
 
 let itemsCat = new category("Items", itemsCheck)
 itemsCat.phrases = [pencil, mouse]
@@ -342,7 +358,7 @@ function gameRun()
     let inp = inputBox.value
 
     // PEOPLE
-    if(peopleCheck.checked)
+    if(peopleCheck.is(":checked"))
     {
         if(!selectedPhrase.guessList.includes(inp))
         {
@@ -441,6 +457,81 @@ function gameRun()
                     checkStrikes(selectedPhrase.filled)
                 }
             }
+            // If phrase is Purple Guy
+            else if(selectedPhrase.phrase == "Purple Guy")
+            {
+                // Correct guess
+                if(inp == "p")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(0, "P", 3, "p", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "u")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(1, "u", 8, "u", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "r")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(2, "r", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "l")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(4, "l", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "e")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(5, "e", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "g")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(7, "G", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "y")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(9, "y", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+
+                // Guess whole phrase
+                else if(inp == "Purple Guy" || inp == "purple guy")
+                {
+                    blanksList[0].innerHTML = "P"
+                    blanksList[1].innerHTML = "u"
+                    blanksList[2].innerHTML = "r"
+                    blanksList[3].innerHTML = "p"
+                    blanksList[4].innerHTML = "l"
+                    blanksList[5].innerHTML = "e"
+                    blanksList[7].innerHTML = "G"
+                    blanksList[8].innerHTML = "u"
+                    blanksList[9].innerHTML = "y"
+
+                    runWin()
+                }
+
+                // Left blank
+                else if(inp == "")
+                {
+                    inputBox.placeholder = "Do not leave blank"
+                }
+
+                // Incorrect guess
+                else
+                {
+                    checkStrikes(selectedPhrase.filled)
+                }
+            }
         }
         else
         {
@@ -484,6 +575,91 @@ function gameRun()
                     blanksList[1].innerHTML = "h"
                     blanksList[2].innerHTML = "i"
                     blanksList[3].innerHTML = "o"
+
+                    runWin()
+                }
+
+                // Left blank
+                else if(inp == "")
+                {
+                    inputBox.placeholder = "Do not leave blank"
+                }
+
+                // Incorrect guess
+                else
+                {
+                    checkStrikes(selectedPhrase.filled)
+                }
+            }
+            // If phrase is Ohio
+            else if(selectedPhrase.phrase == "Grand Canyon")
+            {
+                // Correct guess
+                if(inp == "g")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(0, "G", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "r")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(1, "r", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "a")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(2, "a", 7, "a",  selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "n")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = threeCharConfig(3, "n", 8, "n", 11, "n", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "d")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(4, "d", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "c")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(6, "C", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "y")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(9, "y", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp == "o")
+                {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(10, "o", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                
+
+                // Guess whole phrase
+                else if(inp == "Grand Canyon" || inp == "grand canyon")
+                {
+                    blanksList[0].innerHTML = "G"
+                    blanksList[1].innerHTML = "r"
+                    blanksList[2].innerHTML = "a"
+                    blanksList[3].innerHTML = "n"
+                    blanksList[4].innerHTML = "d"
+
+                    blanksList[6].innerHTML = "C"
+                    blanksList[7].innerHTML = "a"
+                    blanksList[8].innerHTML = "n"
+                    blanksList[9].innerHTML = "y"
+                    blanksList[10].innerHTML = "o"
+                    blanksList[11].innerHTML = "n"
 
                     runWin()
                 }
