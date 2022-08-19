@@ -86,6 +86,37 @@ function checkStrikes(fill)
     inputBox.value = ""
 }
 
+// Run win
+function runWin()
+{
+    // Remove input modes
+    while(guessBox.firstChild)
+    {
+        guessBox.removeChild(guessBox.firstChild)
+    }
+
+    // Display win message
+    let winBox = document.createElement("div")
+    let winText = document.createElement("h1")
+    let playAgain = document.createElement("input")
+
+    winBox.id = "winBox"
+    winText.innerHTML = "You won! Play again?"
+    winText.id = "winText"
+    playAgain.type = "button"
+    playAgain.value = "Play Again"
+    playAgain.id = "playAgain"
+
+    // Reload game
+    playAgain.onclick = function()
+    {
+        location.reload()
+    }
+
+    main.appendChild(winBox)
+    winBox.appendChild(winText)
+    winBox.appendChild(playAgain)
+}
 // Check win
 function checkWin(fill, list)
 {
@@ -379,6 +410,25 @@ function gameRun()
                     selectedPhrase.filled = singleCharConfig(10, "f", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
+
+                // Guess whole phrase
+                else if(inp == "taylor swift" || inp == "Taylor Swift")
+                {
+                    blanksList[0].innerHTML = "T"
+                    blanksList[1].innerHTML = "a"
+                    blanksList[2].innerHTML = "y"
+                    blanksList[3].innerHTML = "l"
+                    blanksList[4].innerHTML = "o"
+                    blanksList[5].innerHTML = "r"
+                    blanksList[7].innerHTML = "S"
+                    blanksList[8].innerHTML = "w"
+                    blanksList[9].innerHTML = "i"
+                    blanksList[10].innerHTML = "f"
+                    blanksList[11].innerHTML = "t"
+
+                    runWin()
+                }
+
                 // Left blank
                 else if(inp == "")
                 {
@@ -426,6 +476,18 @@ function gameRun()
                     selectedPhrase.filled = singleCharConfig(2, "i", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
+
+                // Guess whole phrase
+                else if(inp == "Ohio" || inp == "ohio")
+                {
+                    blanksList[0].innerHTML = "O"
+                    blanksList[1].innerHTML = "h"
+                    blanksList[2].innerHTML = "i"
+                    blanksList[3].innerHTML = "o"
+
+                    runWin()
+                }
+
                 // Left blank
                 else if(inp == "")
                 {
@@ -492,6 +554,19 @@ function gameRun()
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
 
+                // Guess whole phrase
+                else if(inp == "Pencil" || inp == "pencil")
+                {
+                    blanksList[0].innerHTML = "P"
+                    blanksList[1].innerHTML = "e"
+                    blanksList[2].innerHTML = "n"
+                    blanksList[3].innerHTML = "c"
+                    blanksList[4].innerHTML = "i"
+                    blanksList[5].innerHTML = "l"
+
+                    runWin()
+                }
+
                 // Left blank
                 else if(inp == "")
                 {
@@ -537,6 +612,18 @@ function gameRun()
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(4, "e", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+
+                // Guess whole phrase
+                else if(inp == "Mouse" || inp == "mouse")
+                {
+                    blanksList[0].innerHTML = "M"
+                    blanksList[1].innerHTML = "o"
+                    blanksList[2].innerHTML = "u"
+                    blanksList[3].innerHTML = "s"
+                    blanksList[4].innerHTML = "e"
+
+                    runWin()
                 }
 
                 // Left blank
