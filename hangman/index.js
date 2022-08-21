@@ -12,8 +12,8 @@ var body = document.querySelector("body")
 var numOfBlanks = $("#numOfBlanks")
 
 var inputBox = document.createElement("input")
-var subButton = document.createElement("input")
-subButton.type = "button"
+var subButton = document.createElement("button")
+
 let blanksList = []
 let strikes = 0
 
@@ -234,7 +234,7 @@ class category
         // Create input
         inputBox.placeholder = "Enter a guess"
         inputBox.id = "guess"
-        subButton.value = "Enter"
+        subButton.innerHTML = "Enter"
         subButton.id = "enterButton"
 
         // Append to document
@@ -836,4 +836,17 @@ body.addEventListener("keypress", (KeyboardEvent) => {
     {
         gameRun()
     }
+})
+
+// Submit button on click
+let enter = $(subButton)
+let enterWidth = subButton.style.width-1
+
+enter.on("click", function()
+{
+    enter.animate({width: 65, fontSize: 13.3333}, "fast")
+
+    enter.animate({width: 55, fontSize: 10}, "fast")
+
+    enter.animate({width: 65, fontSize: 13.3333}, "fast")
 })

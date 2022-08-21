@@ -40,7 +40,7 @@ body {
     grid-column: 1/2;
     flex-direction: column;
     border-radius: 20px;
-    border: 3px solid rgb(146, 170, 198);
+    border: 0px solid rgb(146, 170, 198);
     background-image: linear-gradient(rgb(208, 218, 227), rgb(171, 196, 211));
 }
 #catTitle {
@@ -61,7 +61,7 @@ body {
     align-items: center;
     flex-direction: column;
     border-radius: 20px;
-    border: 3px solid rgb(146, 170, 198);
+    border: 0px solid rgb(146, 170, 198);
     background-image: linear-gradient(rgb(208, 218, 227), rgb(171, 196, 211));
 }
 #mainHead {
@@ -93,20 +93,23 @@ body {
 }
 #enterButton {
     width: 25%;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 0px solid rgb(84, 79, 119);
+    background-color: rgb(158, 160, 199);
 }
 #enterButton:hover {
-    background-color: rgb(221, 221, 221);
+    background-color: rgb(144, 146, 190);
 }
 
 /* ##################### */
 #guess {
     width: 50%;
     margin: 15px;
-    padding: 8px;
+    padding:10px;
     border-radius: 5px;
+    border: 0px solid black;
+    background-color: rgb(244, 241, 255);
 }
 #winBox {
     display: flex;
