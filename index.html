@@ -5,8 +5,10 @@
     <link rel="icon" href="https://i.pinimg.com/564x/4a/ac/f0/4aacf02de6f6423ed19767a06e93106a.jpg">
     <!-- CSS -->
     <link rel="stylesheet" href="main.css">
-    <!-- M
-        eta -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,22 +19,26 @@
 <nav id="navBar"></nav>
 
 <body>
-    <div id="row">
+    <div id="grid">
         <div id="main">
-            <h1 id="intro"></h1>
+            <h1 id="intro" class="introText">emiscringe</h1>
             <br>
-            <h2 id="para"></h2>
+            <h2 id="para" class="introText">Just sharing my interests :)</h2>
+        </div>
+
+        <div id="linkBox">
+            <div id="linkCont">
+                <a target="_blank" href="https://www.instagram.com/em.is.cringe/" class="socialLink"><img src="images/icons/instagram.jpg" class="iconImg"></a>
+                <a target="_blank" href="https://pin.it/6dNzzfu" class="socialLink"><img src="images/icons/pinterest.jpg" class="iconImg"></a>
+                <a target="_blank" href="https://github.com/emsart05/emiscringe" class="socialLink"><img src="images/icons/github.jpg" class="iconImg"></a>
+                <a target="_blank" href="https://open.spotify.com/user/tp00mgzlevmy23ly9d2gefdyb?si=3897bfc2da604466" class="socialLink"><img src="images/icons/spotify.jpg" class="iconImg"></a>
+            </div>
         </div>
     </div>
-    <div id="row1">
-        <table>
-            <tr id="icons">
-            </tr>
-            <tr id="lbls">
-            </tr>
-        </table>
-    </div>
+
+    <!-- script -->
     <script src="main.js"></script>
     <script src="nav.js"></script>
+    <script src="jquery/indexQuery.js"></script>
 </body>
 </html>
