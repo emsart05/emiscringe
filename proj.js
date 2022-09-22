@@ -5,6 +5,7 @@ let navBar = $("#projects-nav")
 let navItem = $(".proj-nav-item")
 let body = $("#projects-body")
 let projTitle = $(".proj-title")
+let navBg = $("#navBackground")
 let cap = $(".cap")
 
 // When page loads
@@ -23,7 +24,7 @@ $(document).ready(function(){
         navBar.css("flex-wrap", "wrap")
 
         // Nav items
-        navItem.css("font-size", "10px")
+        navItem.css("font-size", "14px")
         navItem.css("padding", "8px")
 
         // Body
@@ -39,10 +40,10 @@ $(document).ready(function(){
     }
 
     // Window width between 500 and 700
-    else if($(window).width() < 700 && $(window).width() > 500) {
+    else if($(window).width() <= 750 && $(window).width() > 500) {
         // Nav items
-        navItem.css("font-size", "10px")
-        navItem.css("padding", "8px")
+        navItem.css("font-size", "16px")
+        navItem.css("padding", "10px")
 
         // Project blocks
         projBlock.css("top", "15px")
@@ -51,18 +52,22 @@ $(document).ready(function(){
         projImg.css("margin-top", "10px")
 
         // Title
-        projTitle.css("font-size", "20px")
+        projTitle.css("font-size", "14px")
 
         // Caption
-        cap.css("font-size", "15px")
+        cap.css("font-size", "13px")
     }
 
     // Window width between 700 and 1050
-    else if($(window).width() < 1050 && $(window).width() > 700) {
+    else if($(window).width() < 1075 && $(window).width() > 750) {
         // Project blocks
         projBlock.css("grid-template-columns", "repeat(3 33%)")
-        navItem.css("padding", "10px")
-        navItem.css("padding-top", "15px")
-        navItem.css("font-size", "15px")
+        projTitle.css("font-size", "16px")
+        projTitle.css("margin-top", "10px")
+
+        navItem.css("padding", "20px")
+        navItem.css("font-size", "18px")
     }
+
+    navBg.css("height", navBar.css("height"))
 });

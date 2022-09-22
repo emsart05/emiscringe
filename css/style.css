@@ -59,6 +59,7 @@ font-family: 'Silkscreen', cursive;
     margin: 0px;
     display: flex;
     opacity: 100%;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     background: linear-gradient(rgb(254, 203, 237), rgb(230, 174, 211))
@@ -85,9 +86,10 @@ font-family: 'Silkscreen', cursive;
 }
 #konata {
     top: 120px;
-    position: relative;
+    z-index: -1;
+    position: fixed;
     animation-name: konataPopUp;
-    animation-duration: 5s;
+    animation-duration: 4.7s;
     animation-iteration-count: infinite;
 }
 #background {

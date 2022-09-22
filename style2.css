@@ -221,14 +221,14 @@ a:hover {
 .proj-block {
     top: 35px;
     width: 90%;
-    left: 25px;
+    left: 50px;
     margin: 0px;
     padding: 0px;
-    display: grid;
-    align-items: end;
+    display: flex;
+    align-items: start;
     position: relative;
+    flex-direction: column;
     border: 0px solid black;
-    /* grid-template-columns: repeat(3, 33%); */
     font-family: 'Press Start 2P', cursive;
 }
 .cap {
@@ -236,17 +236,17 @@ a:hover {
     left: 0px;
     margin: 0px;
     padding: 0px;
-    margin-top: 25px;
-    font-size: 18px;
+    margin-top: 0px;
+    font-size: 16px;
     font-weight: 700;
-    color: rgb(18, 50, 77);
+    color: rgb(40, 18, 77);
     position: relative;
     text-decoration: none;
     border: 0px solid black;
     font-family: 'Source Code Pro', monospace;
 }
 .cap:hover {
-    color: rgb(44, 109, 161);
+    color: rgb(99, 44, 161);
 }
 
 .proj-ss {
@@ -260,28 +260,33 @@ a:hover {
 .proj-title {
     position: relative;
     margin: 0px;
-    font-size: 25px;
+    padding: 0px;;
+    font-size: 20px;
     border: 0px solid black;
 }
 
 #projects-nav {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
-    box-shadow: rgb(131, 151, 177) 0 15px 10px;
-    background-color: rgb(131, 151, 177) ;
+    margin: 0px;
+    z-index: 99;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(228, 190, 225);
     font-family: 'Press Start 2P', cursive;
+    box-shadow: 0px 5px 10px rgb(228, 190, 225);
 }
+
 .proj-nav-item {
     padding: 18px;
-    font-size: 20px;
+    font-size: 23px;
     color: black;
+    z-index: 101;
     text-decoration: none;
 
 }
@@ -668,3 +673,4 @@ input::placeholder {
         padding: 5px 0px 5px 0px;
     }
 }
+
