@@ -44,7 +44,7 @@ if($(window).width() < 1000)
         linkBox.css("padding", "0px")
         navItem.css("padding", "5px")
         linkCont.css("padding", "5px")
-        grid.css("margin-top", "50px")
+        grid.css("margin-top", "0px")
 
         para.css("font-size", "15px")
         intro.css("font-size", "35px")
@@ -64,7 +64,7 @@ if($(window).width() < 1000)
         linkBox.css("padding", "0px")
         navItem.css("padding", "5px")
         linkCont.css("padding", "5px")
-        grid.css("margin-top", "50px")
+        grid.css("margin-top", "0px")
         main.css("padding", "50px")
 
         para.css("font-size", "15px")
@@ -80,5 +80,9 @@ if($(window).width() < 1000)
         intro.css("padding", "0px")
         navItem.css("padding", "12px")
         navItem.css("font-size", "35px")
+    }
+
+    if($(window).width() == 320) {
+        grid.css("margin-top", "150px")
     }
 }
