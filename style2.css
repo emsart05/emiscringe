@@ -261,7 +261,7 @@ a:hover {
     position: relative;
     margin: 0px;
     padding: 0px;;
-    font-size: 20px;
+    font-size: 17px;
     border: 0px solid black;
 }
 
@@ -283,8 +283,8 @@ a:hover {
 }
 
 .proj-nav-item {
-    padding: 18px;
-    font-size: 23px;
+    padding: 15px;
+    font-size: 20px;
     color: black;
     z-index: 101;
     text-decoration: none;
