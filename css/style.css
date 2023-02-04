@@ -6,13 +6,6 @@ font-family: 'Playball', cursive;
 font-family: 'Silkscreen', cursive;
 */
 
-.navLinks {
-    padding: 0px;
-    font-size: 25px;
-    margin-top: 15px;
-    font-style: italic;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
 .introText {
     margin: 0px;
     padding: 0px;
@@ -24,16 +17,7 @@ font-family: 'Silkscreen', cursive;
     margin: -3px;
 }
 
-#grid {
-    z-index: 1;
-    gap: 15px;
-    width: 90%;
-    display: flex;
-    margin-top: 100px;
-    flex-direction: row;
-    justify-content: center;
-    border: 0px solid black;
-}
+
 #linkBox {
     width: 10%;
     display: flex;
@@ -54,20 +38,23 @@ font-family: 'Silkscreen', cursive;
     box-shadow: 0 5px 15px rgb(132, 108, 145);
 }
 
-#main {
-    width: 35%;
+/* #main {
+    width: 28%;
     margin: 0px;
     display: flex;
     opacity: 100%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin: 0px; padding: 0px;
     background: linear-gradient(rgb(254, 203, 237), rgb(230, 174, 211))
-}
+} */
 #intro {
-    font-size: 45px;
+    padding: 0px;
+    font-size: 60px;
 }
 #para {
+    padding: 0px;
     font-size: 18px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
