@@ -1,44 +1,96 @@
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital@0;1&family=Press+Start+2P&family=Source+Code+Pro&display=swap');
-/* font-family: 'Ibarra Real Nova', serif; 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Forum&family=Kanit:wght@300&family=Playball&family=Silkscreen&display=swap');
+
+/* 
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Forum', cursive;
+font-family: 'Kanit', sans-serif;
+font-family: 'Playball', cursive;
+font-family: 'Silkscreen', cursive;
+font-family: 'Ibarra Real Nova', serif; 
 font-family: 'Press Start 2P', cursive;
-font-family: 'Source Code Pro', monospace;*/
+font-family: 'Source Code Pro', monospace;
+*/
 
 body {
     position: relative;
     text-align: center;
     align-items: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     border: 0px solid black;
     background: linear-gradient(90deg, rgb(221, 190, 228), rgb(160, 120, 162));
 }
+hr {
+    border: 1px solid black;
+}
+span {
+    color: transparent;
+}
+
+#grid {
+    z-index: 1;
+    gap: 0px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px; padding: 0px;
+    border: 0px solid black;
+}
+
+.main-and-links {
+    width: 45%;
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px; padding: 0px;
+    border: 0px solid black;
+}
+
+#main {
+    gap: 10px;
+    width: 65%;
+    display: flex;
+    opacity: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px; padding: 0px;
+    border: 0px solid black;
+    border-radius: 50px 0px 50px 0px;
+    box-shadow: 0 5px 15px rgb(132, 108, 145);
+    background: linear-gradient(rgb(254, 203, 237), rgb(230, 174, 211))
+}
+
 #navBar {
+    gap: 10%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    position: fixed;
+    position: absolute;
     top: 0; left: 0;
     z-index: 2;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .navLinks {
     margin: 10px;
     padding: 5px;
+    padding: 0px;
+    font-size: 25px;
+    margin-top: 15px;
+    font-style: italic;
     font-weight: 600;
     text-decoration: none;
     color: rgb(43, 26, 41);
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navLinks:hover {
     color: rgb(105, 54, 89);
-}
-
-#main {
-    width: 100%;
-    border-radius: 50px 0px 50px 0px;
-    border: 0px solid black;
-    background-color: rgb(254, 203, 237);
-    box-shadow: 0 5px 15px rgb(132, 108, 145);
 }
 
 .linkClass {
@@ -60,13 +112,22 @@ img {
      } */
 
 
+.yt-container {
+    text-align: left;
+}
+.video-lbl {
+    font-weight: 600;
+    font-size: 25px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
 /* Desktop */
-@media (min-width: 1000px) { /* width >= 1000px */
+@media (min-width: 999px) { /* width >= 1000px */
     body {
         height: 700px;
     }
     #main {
-        width: 25%;
+        width: 65%;
     }
     #intro {
         padding: 0px;
@@ -80,10 +141,15 @@ img {
 /* Tablet */
 @media (min-width: 600px) and (max-width: 999px) { /* 1000px > width >= 600px */
     body {
-        height: 1000px;
+        height: 850px;
     }
     #main {
-        width: 40%;
+        width: 75%;
+    }
+    #grid {
+        gap: 75px;
+        align-items: center;
+        flex-direction: column;
     }
     #intro {
         padding: 15px;
@@ -91,11 +157,21 @@ img {
     }
     .linkClass {
         width: 13%;
+        font-size: 30px;
         margin-top: 65px;
+    }
+    .navLinks {
+        padding: 0px;
+        margin: 0px;
+        font-size: 30px;
+    }
+
+    .main-and-links {
+        width: 70%;
     }
 }
 
-/* Mobile */
+/* Phone */
 @media (max-height: 675px) { /* height <= 675px */
     body {
         height: 625px;
@@ -119,6 +195,10 @@ img {
         margin: 10px;
         margin-top: 25px;
     }
+    #youtube-video {
+        width: 310px;
+        height: 180px;
+    }
 }
 
 @media (min-height: 725px) and (max-width: 710px) { /* height >= 725px & width <= 710px*/
@@ -127,7 +207,6 @@ img {
     }
     #main {
         width: 50%;
-        padding: 40px;
     }
     #intro {
         padding: 0px;
@@ -137,6 +216,7 @@ img {
         font-size: 11px;
     }
     .navLinks {
+        margin: 0px;
         font-size: 12px;
     }
     .linkClass {

@@ -15,7 +15,7 @@ projects.className = "navLinks"
 projects.innerHTML = "Projects"
 projects.href = "https://www.emiscringe.ml/projects"
 
-// BLOGS
+// BLOG
 blog.id = "blogLink"
 blog.className = "navLinks"
 blog.innerHTML= "Blog"
