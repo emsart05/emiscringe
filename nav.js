@@ -7,19 +7,19 @@ const blog = document.createElement("a")
 webArtLink.id = "webArtLink"
 webArtLink.className = "navLinks"
 webArtLink.innerHTML = "Web 'Art'"
-webArtLink.href = "https://www.emiscringe.ml/webArt"
+webArtLink.href = "https://www.emiscringe.dev/webArt"
 
 // PROJECTS
 projects.id = "projLink"
 projects.className = "navLinks"
 projects.innerHTML = "Projects"
-projects.href = "https://www.emiscringe.ml/projects"
+projects.href = "https://www.emiscringe.dev/projects"
 
 // BLOG
 blog.id = "blogLink"
 blog.className = "navLinks"
 blog.innerHTML= "Blog"
-blog.href = "https://www.emiscringe.ml/blog"
+blog.href = "https://www.emiscringe.dev/blog"
 
 bar.appendChild(webArtLink)
 bar.appendChild(projects)
