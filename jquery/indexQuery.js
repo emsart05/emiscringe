@@ -127,7 +127,7 @@ if($(window).width() < 1000)
 }
 else {
     platform = "desktop"
-    console.log(platform)
+    // console.log(platform)
 }
 
 let links = ["#webArtLink", "#projLink", "#blogLink"]
