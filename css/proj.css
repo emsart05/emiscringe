@@ -29,3 +29,14 @@
         transform: translate(-500px);
     }
 }
+
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    #animation {
+        background: linear-gradient(90deg, rgb(28, 17, 32), rgb(26, 11, 30));
+    }
+    #background {
+        filter: brightness(35%);
+    }
+}

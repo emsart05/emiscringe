@@ -109,3 +109,12 @@ font-family: 'Silkscreen', cursive;
         transform: translate(-500px);
     }
 }
+
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    #linkCont {
+        box-shadow: 0 5px 15px rgb(23, 16, 26);
+        background: linear-gradient(rgb(75, 48, 75), rgb(55, 30, 55));
+    }
+}
