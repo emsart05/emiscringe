@@ -266,6 +266,7 @@ a:hover {
 }
 
 #projects-nav {
+    gap: 10%;
     top: 0;
     left: 0;
     width: 100%;
@@ -275,16 +276,18 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     position: fixed;
+    font-weight: 600;
+    font-style: italic;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     background-color: rgb(228, 190, 225);
-    font-family: 'Press Start 2P', cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     box-shadow: 0px 5px 10px rgb(228, 190, 225);
 }
 
 .proj-nav-item {
-    padding: 15px;
-    font-size: 20px;
+    padding: 20px;
+    font-size: 25px;
     color: black;
     z-index: 101;
     text-decoration: none;
@@ -312,81 +315,25 @@ a:hover {
     font-family: 'Source Code Pro', monospace;
     text-decoration: none;
 }
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+    #projects-nav {
+        background-color: rgb(41, 27, 45);
+        box-shadow: 0px 5px 10px rgb(32, 22, 34);
+    }
+    .proj-nav-item, .proj-title, .cap {
+        color: rgb(243, 210, 255);
+    }
+}
+
 .signin {
     color: black;
 }
 
 
 /* Sign Up/In */
-#signup-nav {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    justify-content: space-around;
-    background-color: rgb(174, 38, 38);
-    box-shadow: rgb(109, 40, 40) 0 5px 15px 5px;
-}
-#sign-nav-item {
-    padding: 20px;
-    font-size: 25px;
-    font-family: 'Anton', sans-serif;
-    text-decoration: none;
-    z-index: 100;
-}
-#sign-nav-item:hover {
-    background-color: rgb(255, 168, 168);
-}
-#sign-body {
-    background-color: rgb(255, 205, 205);
-}
-#signup-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-    position: absolute;
-    top: 110px;
-    left: 500px;
-    width: 30%;
-    background-color: rgb(218, 132, 101);
-    border-radius: 15px;
-    box-shadow: gray 0 5px 15px 5px;
-    z-index: 5;
-}
-#signup-box-item {
-    padding: 0px;
-    align-self: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#signup-box-lable {
-    padding: 0px;
-    align-self: center;
-    font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-#input-box1, #input-box2, #input-box3, #input-box4, #input-box5 {
-    padding: 5px;
-    border-radius: 0px;
-    font-size: 20px;
-}
-#submit-button {
-    padding: 5px;
-    margin: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-    align-self: center;
-    width: 45%;
-    font-size: 20px;
-    border-radius: 5px;
-    background-color: rgb(184, 71, 77);
-    border-color: rgb(184, 71, 77);
-}
-#submit-button:hover {
-    background-color: rgb(172, 72, 72);
-    border-color: rgb(172, 72, 72);
-}
+
 input {
     background-color: rgb(218, 132, 101);
     border: 0px;
@@ -397,22 +344,6 @@ input::placeholder {
     color: rgb(48, 48, 48);
     font-size: 20px;
     padding: 5px;
-}
-
-.email {
-    color: black;
-}
-.firstName {
-    color: black;
-}
-.lastName {
-    color: black;
-}
-.username {
-    color: black;
-}
-.password {
-    color: black;
 }
 
 /* animations */
