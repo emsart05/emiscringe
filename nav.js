@@ -24,3 +24,5 @@ blog.href = "https://www.emiscringe.dev/blog"
 bar.appendChild(webArtLink)
 bar.appendChild(projects)
 bar.appendChild(blog)
+
+export default projects

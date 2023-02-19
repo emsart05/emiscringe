@@ -16,9 +16,6 @@
     <title>emiscringe | Home</title>
 </head>
 
-<!-- nav bar -->
-<nav id="navBar"></nav>
-
 <!-- background animation -->
 <div id="animation">
     <img src="images/mainBackground.jpg" id="background">
@@ -26,36 +23,60 @@
 
 <!-- body -->
 <body>
-    <div id="grid">
-        <div class="main-and-links">
-            <div id="main">
-                <!-- <img src="gifs/konoata2.gif" id="konata"> -->
-                <h1 id="intro" class="introText">emiscringe</h1>
-                <br>
-                <h2 id="para" class="introText">Just sharing my interests :)</h2>
+    <div class="column-cont">
+        <!-- nav bar -->
+        <nav id="navBar"></nav>
+
+        <div id="grid">
+            <div class="main-and-links">
+                <div id="main">
+                    <!-- <img src="gifs/konoata2.gif" id="konata"> -->
+                    <h1 id="intro" class="introText">emiscringe</h1>
+                    <br>
+                    <h2 id="para" class="introText">Just sharing my interests :)</h2>
+                </div>
+
+                <div id="linkBox">
+                    <div id="linkCont">
+                        <a target="_blank" href="https://www.instagram.com/em.is.cringe/" class="socialLink"><img src="images/icons/instagram.jpg" class="iconImg"></a>
+                        <a target="_blank" href="https://pin.it/6dNzzfu" class="socialLink"><img src="images/icons/pinterest.jpg" class="iconImg"></a>
+                        <a target="_blank" href="https://github.com/emsart05/emiscringe" class="socialLink"><img src="images/icons/github.jpg" class="iconImg"></a>
+                        <a target="_blank" href="https://open.spotify.com/user/tp00mgzlevmy23ly9d2gefdyb?si=3897bfc2da604466" class="socialLink"><img src="images/icons/spotify.jpg" class="iconImg"></a>
+                    </div>
+                </div>
             </div>
 
-            <div id="linkBox">
-                <div id="linkCont">
-                    <a target="_blank" href="https://www.instagram.com/em.is.cringe/" class="socialLink"><img src="images/icons/instagram.jpg" class="iconImg"></a>
-                    <a target="_blank" href="https://pin.it/6dNzzfu" class="socialLink"><img src="images/icons/pinterest.jpg" class="iconImg"></a>
-                    <a target="_blank" href="https://github.com/emsart05/emiscringe" class="socialLink"><img src="images/icons/github.jpg" class="iconImg"></a>
-                    <a target="_blank" href="https://open.spotify.com/user/tp00mgzlevmy23ly9d2gefdyb?si=3897bfc2da604466" class="socialLink"><img src="images/icons/spotify.jpg" class="iconImg"></a>
-                </div>
+            <div class="yt-container">
+                <div class="video-lbl"><span>Lastest YT video</span> <span class="hide">...</span>↓</div>
+                <hr>
+                <iframe SameSite="Strict" id="youtube-video" width="360" height="220" src="https://www.youtube-nocookie.com/embed/BgfdTSbDxro" title="Electric Angel (Hatsune Miku ver) Project DIVA F2nd [HARD - EXCELLENT]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
 
-        <div class="yt-container">
-            <div class="video-lbl"><span>Lastest YT video</span> <span class="hide">...</span>↓</div>
-            <hr>
-            <iframe SameSite="Strict" id="youtube-video" width="380" height="230" src="https://www.youtube-nocookie.com/embed/BgfdTSbDxro" title="Electric Angel (Hatsune Miku ver) Project DIVA F2nd [HARD - EXCELLENT]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <!-- About & contact -->
+        <div class="c-all">
+            <div class="contact-info">
+                <div class="about-info">
+                    <div class="about-head"><b>About the Developer:</b></div>
+                    <p class="about-text">
+                        I am a beginner developer from the United States with about 1 year of self-taught 
+                        experience, and I'm looking for starter projects. If you have a fairly simple project, 
+                        such as an informational website that you would like made, please contact me!
+                    </p>
+                </div>
+                <hr>
+                <div class="contact-head"><b>Contact Info:</b></div>
+                <b>Email:</b> emscoding.05@gmail.com<br>
+                <b>Instagram:</b> em.is.cringe 
+            </div>
+            <img src="https://i.pinimg.com/564x/4e/d6/bc/4ed6bc33de9a58802facdf486af3bd3a.jpg" class="contact-img">
         </div>
     </div>
 
     <!-- script -->
-    <script src="main.js"></script>
-    <script src="nav.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="nav.js" type="module"></script>
     <script src="backAnimate.js"></script>
-    <script src="jquery/indexQuery.js"></script>
+    <script src="jquery/indexQuery.js" type="module"></script>
 </body>
 </html>
