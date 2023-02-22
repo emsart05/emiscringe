@@ -179,6 +179,14 @@ img {
     border-radius: 5px;
 }
 
+.skills, .skill, .contact-head, .contact-info {
+    text-align: left;
+}
+.skill-head {
+    font-size: 35px;
+    font-family: 'Playball', cursive;
+}
+
 /* Desktop */
 @media (min-width: 1051px) { /* width >= 1000px */
     body {

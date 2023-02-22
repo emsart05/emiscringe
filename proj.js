@@ -24,8 +24,9 @@ $(document).ready(function(){
         navBar.css("flex-wrap", "wrap")
 
         // Nav items
-        navItem.css("font-size", "14px")
-        navItem.css("padding", "8px")
+        navItem.css("font-size", "18px")
+        navItem.css("padding", "0px 8px 0px 8px")
+        navItem.css("margin", "0px")
 
         // Body
         body.css("top", "45px")
