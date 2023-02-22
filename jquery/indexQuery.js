@@ -20,48 +20,7 @@ var platform = ""
 if($(window).width() < 1000) 
 {
     // Phone
-    if($(window).width() < 400) 
-    {
-        platform = "phone"
-        console.log(platform)
-        socialIcon.css("border-radius", "15px")
-
-        socialIcon.css("width", "80%")
-        linkCont.css("width", "60%")
-        linkBox.css("width", "25%")
-        linkBox.css("height", "100%")
-
-        socialIcon.css("margin", "0px")
-        linkBox.css("margin", "0px")
-        linkBox.css("padding", "0px")
-        navItem.css("padding", "5px")
-        linkCont.css("padding", "5px")
-
-        para.css("font-size", "15px")
-        intro.css("font-size", "35px")
-        navItem.css("font-size", "18px")
-
-        grid.css("flex-direction", "column")
-        grid.css("align-items", "center")
-        grid.css("margin-top", "0px")
-        grid.css("gap", "75px")
-
-        main.css("width", "75%")
-        main.css("padding", "25px")
-        mainAndLinks.css("width", "90%")
-        mainAndLinks.css("height", "50%")
-        mainAndLinks.css("border", "0px solid black")
-
-        if($(window).width() <= 376) {
-            navItem.css("margin", "5px")
-            navItem.css("padding", "0px")
-
-            ytVideo.css("width", "200px")
-            ytVideo.css("height", "300px")
-        }
-    }
-
-    else if($(window).width() < 500) 
+    if($(window).width() < 500) 
     {
         platform = "phone"
         console.log(platform)
@@ -106,8 +65,49 @@ if($(window).width() < 1000)
         mainAndLinks.css("flex-direction", "column")
         mainAndLinks.css("align-items", "center")
 
-        $(".c-all").width("85%")
         $(".column-cont").css("gap", "10px")
+
+        $("#youtube-video").css("width", "310px")
+        $("#youtube-video").css("height", "200px")  
+
+        if($(window).width() < 400) 
+        {
+            platform = "phone"
+            socialIcon.css("border-radius", "8px")
+
+            linkCont.css("width", "100%")
+            linkBox.css("width", "75%")
+            linkBox.css("height", "100%")
+
+            socialIcon.css("margin", "0px")
+            linkBox.css("margin", "0px")
+            linkBox.css("padding", "0px")
+            navItem.css("padding", "5px")
+            linkCont.css("padding", "5px")
+
+            para.css("font-size", "15px")
+            intro.css("font-size", "35px")
+            navItem.css("font-size", "18px")
+
+            grid.css("flex-direction", "column")
+            grid.css("align-items", "center")
+            grid.css("margin-top", "0px")
+            grid.css("gap", "75px")
+
+            main.css("width", "75%")
+            main.css("padding", "25px")
+            mainAndLinks.css("width", "90%")
+            mainAndLinks.css("height", "50%")
+            mainAndLinks.css("border", "0px solid black")
+
+            if($(window).width() <= 376) {
+                navItem.css("margin", "5px")
+                navItem.css("padding", "0px")
+
+                ytVideo.css("width", "200px")
+                ytVideo.css("height", "300px")
+            }
+        }
     }
 
     // Tablet
@@ -124,6 +124,9 @@ if($(window).width() < 1000)
         navItem.css("padding", "12px")
         navItem.css("font-size", "30px")
         mainAndLinks.css("margin-top", "100px")
+
+        $("#youtube-video").css("width", "450px")
+        $("#youtube-video").css("height", "260px")
 
         if($(window).width() <= 850) {
             main.css("width", "100%")
