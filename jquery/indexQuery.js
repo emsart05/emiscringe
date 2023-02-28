@@ -154,32 +154,20 @@ else {
     // console.log(platform)
 }
 
-let links = ["#webArtLink", "#projLink", "#blogLink", "homeLink"]
+let links = ["#webArtLink", "#projLink", "#blogLink", "#homeLink"]
 links.forEach((link) => {
-    if(platform == "phone") {
-        $(`${link}`).on("mouseenter", function() {
-            $(`${link}`).animate({fontSize: 28}, "fast")
-        })
-        $(`${link}`).on("mouseleave", function() {
-            $(`${link}`).animate({fontSize: 25}, "fast")
-        })
-    }
-    else if(platform == "tablet") {
-        $(`${link}`).on("mouseenter", function() {
-            $(`${link}`).animate({fontSize: 33}, "fast")
-        })
-        $(`${link}`).on("mouseleave", function() {
-            $(`${link}`).animate({fontSize: 30}, "fast")
-        })
-    }
-    else if(platform == "desktop") {
-        $(`${link}`).on("mouseenter", function() {
-            $(`${link}`).animate({fontSize: 28}, "fast")
-        })
-        $(`${link}`).on("mouseleave", function() {
-            $(`${link}`).animate({fontSize: 25}, "fast")
-        })
-    }
+    let orignalSize = parseInt($(`${link}`).css("font-size"))
+    let originalPadding =parseInt($(`${link}`).css("padding"))
+    $(`${link}`).on("mouseenter", function() {
+        $(`${link}`).animate({
+            fontSize: orignalSize+3,
+            padding: originalPadding-3}, "fast")
+    })
+    $(`${link}`).on("mouseleave", function() {
+        $(`${link}`).animate({
+            fontSize: orignalSize,
+            padding: originalPadding}, "fast")
+    })
 })
 
 export default platform
