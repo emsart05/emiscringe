@@ -26,3 +26,12 @@
 .navLinks:hover {
     color: rgb(105, 54, 89);
 }
+
+@media (prefers-color-scheme: dark) {
+    .navLinks {
+        color: rgb(250, 210, 255);
+    }
+    .navLinks:hover {
+        color: rgb(231, 175, 251);
+    }
+}
