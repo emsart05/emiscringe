@@ -32,7 +32,6 @@ home.href = "https://www.emiscringe.dev"
 console.log(document.querySelector("body").getAttribute("name"))
 
 if(document.querySelector("body").getAttribute("name") == "projects") {
-    console.log(pbar[0])
     pbar.append(home)
     pbar.append(webArtLink)
     pbar.append(projects)
