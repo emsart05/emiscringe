@@ -1,3 +1,4 @@
+
 var peopleCheck = document.getElementById("peopleCheck")
 var placesCheck = document.getElementById("placesCheck")
 var itemsCheck = document.getElementById("itemsCheck")
@@ -198,25 +199,40 @@ class phraseClass
         this.charNum = charNum
         this.filled = 0
         this.hint = hint
+
+        this.fillBlankList = () => {
+            for(let i = 0; i < this.charNum; i++) {
+                this.blankList.push("_")
+            }
+        }
     }
 }
 // People phrases
 let taylorSwift = new phraseClass("Taylor Swift", 11, "Popular singer. Switched from country to pop.")
-taylorSwift.blankList = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+taylorSwift.fillBlankList()
 let purpleGuy = new phraseClass("Purple Guy", 9, "The man behind the slaughter.")
-purpleGuy.blankList = ["_", "_", "_", "_", "_", "_", "_", "_", "_"]
+purpleGuy.fillBlankList()
+let miku = new phraseClass("Hatsune Miku", 11, "Vocaloid software voicebank with a blue-haired mascot.")
+miku.fillBlankList()
+let heather = new phraseClass("Heather", 7, "There are fields of me in Ireland. Also a popular girls' name.")
+heather.fillBlankList()
 
 // Places phrases
 let ohio = new phraseClass("Ohio", 4, "Corn state.")
-ohio.blankList = ["_", "_", "_", "_"]
+ohio.fillBlankList()
 let grandCanyon = new phraseClass("Grand Canyon", 11, "Famous crater in the earth.")
-grandCanyon.blankList = ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+grandCanyon.fillBlankList()
 
 // Items phrases
 let pencil = new phraseClass("Pencil", 6, "Used for writing.")
-pencil.blankList = ["_", "_", "_", "_", "_", "_"]
+pencil.fillBlankList()
 let mouse = new phraseClass("Mouse", 5, "A small rodent and a commonly used computer tool.")
-mouse.blankList = ["_", "_", "_", "_", "_"]
+mouse.fillBlankList()
+let shoes = new phraseClass("Shoes", 5, "Worn to protect feet.")
+shoes.fillBlankList()
+let candyCane = new phraseClass("Candy Cane", 9, "A common treat during the winter holidays.")
+candyCane.fillBlankList()
+
 
 // Category template
 class category
@@ -225,7 +241,6 @@ class category
     {
         this.catName = catName
         this.boxVar = boxVar
-
         this.phrases = []
     }
 
@@ -285,6 +300,7 @@ class category
             {
                 blanksList.push(document.createElement("p"))
                 blanksList[test].innerHTML = ".."
+                blanksList[test].className = "filler"
                 blanksList[test].style.color = "rgb(171, 196, 211)"
                 charBox.appendChild(blanksList[test])
 
@@ -307,13 +323,13 @@ class category
     }
 }
 let peopleCat = new category("People", peopleCheck)
-peopleCat.phrases = [taylorSwift, purpleGuy]
+peopleCat.phrases = [taylorSwift, purpleGuy, miku, heather]
 
 let placesCat = new category("Places", placesCheck)
 placesCat.phrases = [ohio, grandCanyon]
 
 let itemsCat = new category("Items", itemsCheck)
-itemsCat.phrases = [pencil, mouse]
+itemsCat.phrases = [pencil, mouse, shoes, candyCane]
 
 // List of category objects
 let allCats = [peopleCat, placesCat, itemsCat]
@@ -337,8 +353,8 @@ allCats.forEach(function(cat)
                 })
                 
                 // Choose phrase from list for specific category
-                cat.displayInput()
-                cat.run()
+                cat.displayInput(inputBox, subButton, guessBox)
+                cat.run(blanksList, selectedPhrase, numOfBlanks, body, charBox)
                 displayHint(selectedPhrase.hint)
 
                 // Change header
@@ -366,61 +382,61 @@ function gameRun()
             if(selectedPhrase.phrase == "Taylor Swift")
             {
                 // Correct guess
-                if(inp == "t")
+                if(inp.toLocaleLowerCase() == "t")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = twoCharConfig(0, "T", 11, "t", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "a")
+                else if(inp.toLocaleLowerCase() == "a")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(1, "a", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "y")
+                else if(inp.toLocaleLowerCase() == "y")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(2, "y", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "l")
+                else if(inp.toLocaleLowerCase() == "l")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(3, "l", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "o")
+                else if(inp.toLocaleLowerCase() == "o")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(4, "o", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "r")
+                else if(inp.toLocaleLowerCase() == "r")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(5, "r", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "s")
+                else if(inp.toLocaleLowerCase() == "s")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(7, "S", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "w")
+                else if(inp.toLocaleLowerCase() == "w")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(8, "w", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "i")
+                else if(inp.toLocaleLowerCase() == "i")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(9, "i", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "f")
+                else if(inp.toLocaleLowerCase() == "f")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(10, "f", selectedPhrase.filled)
@@ -428,7 +444,7 @@ function gameRun()
                 }
 
                 // Guess whole phrase
-                else if(inp == "taylor swift" || inp == "Taylor Swift")
+                else if(inp.toLocaleLowerCase() == "taylor swift")
                 {
                     blanksList[0].innerHTML = "T"
                     blanksList[1].innerHTML = "a"
@@ -461,43 +477,43 @@ function gameRun()
             else if(selectedPhrase.phrase == "Purple Guy")
             {
                 // Correct guess
-                if(inp == "p")
+                if(inp.toLocaleLowerCase() == "p")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = twoCharConfig(0, "P", 3, "p", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "u")
+                else if(inp.toLocaleLowerCase() == "u")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = twoCharConfig(1, "u", 8, "u", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "r")
+                else if(inp.toLocaleLowerCase() == "r")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(2, "r", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "l")
+                else if(inp.toLocaleLowerCase() == "l")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(4, "l", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "e")
+                else if(inp.toLocaleLowerCase() == "e")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(5, "e", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "g")
+                else if(inp.toLocaleLowerCase() == "g")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(7, "G", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "y")
+                else if(inp.toLocaleLowerCase() == "y")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(9, "y", selectedPhrase.filled)
@@ -505,7 +521,7 @@ function gameRun()
                 }
 
                 // Guess whole phrase
-                else if(inp == "Purple Guy" || inp == "purple guy")
+                else if(inp.toLocaleLowerCase() == "purple guy")
                 {
                     blanksList[0].innerHTML = "P"
                     blanksList[1].innerHTML = "u"
@@ -516,6 +532,141 @@ function gameRun()
                     blanksList[7].innerHTML = "G"
                     blanksList[8].innerHTML = "u"
                     blanksList[9].innerHTML = "y"
+
+                    runWin()
+                }
+
+                // Left blank
+                else if(inp == "")
+                {
+                    inputBox.placeholder = "Do not leave blank"
+                }
+
+                // Incorrect guess
+                else
+                {
+                    checkStrikes(selectedPhrase.filled)
+                }
+            }
+            // If phrase is Hatsune Miku
+            else if(selectedPhrase.phrase == "Hatsune Miku") {
+                if(inp.toLocaleLowerCase() == "h") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(0, "H", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "a") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(1, "a", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "t") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(2, "t", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "s") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(3, "s", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "u") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(4, "u", 11, "u", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "n") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(5, "n", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "e") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(6, "e", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "m") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(8, "M", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "i") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(9, "i", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "k") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(10, "k", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+
+                // Guess whole phrase
+                else if(inp.toLocaleLowerCase() == "hatsune miku") {
+                    blanksList[0].innerHTML = "H"
+                    blanksList[1].innerHTML = "a"
+                    blanksList[2].innerHTML = "t"
+                    blanksList[3].innerHTML = "s"
+                    blanksList[4].innerHTML = "u"
+                    blanksList[5].innerHTML = "n"
+                    blanksList[6].innerHTML = "e"
+                    blanksList[8].innerHTML = "M"
+                    blanksList[9].innerHTML = "i"
+                    blanksList[10].innerHTML = "k"
+                    blanksList[11].innerHTML = "u"
+
+                    runWin()
+                }
+
+                // Left blank
+                else if(inp == "")
+                {
+                    inputBox.placeholder = "Do not leave blank"
+                }
+
+                // Incorrect guess
+                else
+                {
+                    checkStrikes(selectedPhrase.filled)
+                }
+            }
+            // If phrase is Heather
+            else if(selectedPhrase.phrase == "Heather") {
+                if(inp.toLocaleLowerCase() == "h") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(0, "H", 4, "h", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "e") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(1, "e", 5, "e", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "a") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(2, "a", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "t") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(3, "t", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "r") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(6, "r", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+
+                // Guess whole phrase
+                else if(inp.toLocaleLowerCase() == "heather") {
+                    blanksList[0].innerHTML = "H"
+                    blanksList[1].innerHTML = "e"
+                    blanksList[2].innerHTML = "a"
+                    blanksList[3].innerHTML = "t"
+                    blanksList[4].innerHTML = "h"
+                    blanksList[5].innerHTML = "e"
+                    blanksList[6].innerHTML = "r"
 
                     runWin()
                 }
@@ -549,19 +700,19 @@ function gameRun()
             if(selectedPhrase.phrase == "Ohio")
             {
                 // Correct guess
-                if(inp == "o")
+                if(inp.toLocaleLowerCase() == "o")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = twoCharConfig(0, "O", 3, "o", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "h")
+                else if(inp.toLocaleLowerCase() == "h")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(1, "h", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "i")
+                else if(inp.toLocaleLowerCase() == "i")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(2, "i", selectedPhrase.filled)
@@ -569,7 +720,7 @@ function gameRun()
                 }
 
                 // Guess whole phrase
-                else if(inp == "Ohio" || inp == "ohio")
+                else if(inp.toLocaleLowerCase() == "ohio")
                 {
                     blanksList[0].innerHTML = "O"
                     blanksList[1].innerHTML = "h"
@@ -591,53 +742,53 @@ function gameRun()
                     checkStrikes(selectedPhrase.filled)
                 }
             }
-            // If phrase is Ohio
+            // If phrase is Grand Canyon
             else if(selectedPhrase.phrase == "Grand Canyon")
             {
                 // Correct guess
-                if(inp == "g")
+                if(inp.toLocaleLowerCase() == "g")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(0, "G", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "r")
+                else if(inp.toLocaleLowerCase() == "r")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(1, "r", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "a")
+                else if(inp.toLocaleLowerCase() == "a")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = twoCharConfig(2, "a", 7, "a",  selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "n")
+                else if(inp.toLocaleLowerCase() == "n")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = threeCharConfig(3, "n", 8, "n", 11, "n", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "d")
+                else if(inp.toLocaleLowerCase() == "d")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(4, "d", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "c")
+                else if(inp.toLocaleLowerCase() == "c")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(6, "C", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "y")
+                else if(inp.toLocaleLowerCase() == "y")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(9, "y", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "o")
+                else if(inp.toLocaleLowerCase() == "o")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(10, "o", selectedPhrase.filled)
@@ -646,7 +797,7 @@ function gameRun()
                 
 
                 // Guess whole phrase
-                else if(inp == "Grand Canyon" || inp == "grand canyon")
+                else if(inp.toLocaleLowerCase() == "grand canyon")
                 {
                     blanksList[0].innerHTML = "G"
                     blanksList[1].innerHTML = "r"
@@ -693,37 +844,37 @@ function gameRun()
             if(selectedPhrase.phrase == "Pencil")
             {
                 // Correct guess
-                if(inp == "p")
+                if(inp.toLocaleLowerCase() == "p")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(0, "P", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "e")
+                else if(inp.toLocaleLowerCase() == "e")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(1, "e", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "n")
+                else if(inp.toLocaleLowerCase() == "n")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(2, "n", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "c")
+                else if(inp.toLocaleLowerCase() == "c")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(3, "c", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "i")
+                else if(inp.toLocaleLowerCase() == "i")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(4, "i", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "l")
+                else if(inp.toLocaleLowerCase() == "l")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(5, "l", selectedPhrase.filled)
@@ -731,7 +882,7 @@ function gameRun()
                 }
 
                 // Guess whole phrase
-                else if(inp == "Pencil" || inp == "pencil")
+                else if(inp.toLocaleLowerCase() == "pencil")
                 {
                     blanksList[0].innerHTML = "P"
                     blanksList[1].innerHTML = "e"
@@ -759,31 +910,31 @@ function gameRun()
             else if(selectedPhrase.phrase == "Mouse")
             {
                 // Correct guess
-                if(inp == "m")
+                if(inp.toLocaleLowerCase() == "m")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(0, "M", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "o")
+                else if(inp.toLocaleLowerCase() == "o")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(1, "o", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "u")
+                else if(inp.toLocaleLowerCase() == "u")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(2, "u", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "s")
+                else if(inp.toLocaleLowerCase() == "s")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(3, "s", selectedPhrase.filled)
                     selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
                 }
-                else if(inp == "e")
+                else if(inp.toLocaleLowerCase() == "e")
                 {
                     selectedPhrase.guessList.push(inp)
                     selectedPhrase.filled = singleCharConfig(4, "e", selectedPhrase.filled)
@@ -791,13 +942,127 @@ function gameRun()
                 }
 
                 // Guess whole phrase
-                else if(inp == "Mouse" || inp == "mouse")
+                else if(inp.toLocaleLowerCase() == "mouse")
                 {
                     blanksList[0].innerHTML = "M"
                     blanksList[1].innerHTML = "o"
                     blanksList[2].innerHTML = "u"
                     blanksList[3].innerHTML = "s"
                     blanksList[4].innerHTML = "e"
+
+                    runWin()
+                }
+
+                // Left blank
+                else if(inp == "")
+                {
+                    inputBox.placeholder = "Do not leave blank"
+                }
+
+                // Incorrect guess
+                else
+                {
+                    checkStrikes(selectedPhrase.filled)
+                }
+            }
+
+            // If phrase is Shoes
+            else if(selectedPhrase.phrase == "Shoes") {
+                // Correct Guess
+                if(inp.toLocaleLowerCase() == "s") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(0, "S", 4, "s", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "h") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(1, "h", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "o") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(2, "o", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "e") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(3, "e", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+
+                // Guess whole phrase
+                else if(inp.toLocaleLowerCase() == "shoes")
+                {
+                    blanksList[0].innerHTML = "S"
+                    blanksList[1].innerHTML = "h"
+                    blanksList[2].innerHTML = "o"
+                    blanksList[3].innerHTML = "e"
+                    blanksList[4].innerHTML = "s"
+
+                    runWin()
+                }
+
+                // Left blank
+                else if(inp == "")
+                {
+                    inputBox.placeholder = "Do not leave blank"
+                }
+
+                // Incorrect guess
+                else
+                {
+                    checkStrikes(selectedPhrase.filled)
+                }
+            }
+
+            // If phrase is Candy Cane
+            if(selectedPhrase.phrase == "Candy Cane") {
+                // Correct Guess
+                if(inp.toLocaleLowerCase() == "c") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(0, "C", 6, "c", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "a") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(1, "a", 7, "a", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "n") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = twoCharConfig(2, "n", 8, "n", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "d") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(3, "d", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "y") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(4, "y", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+                else if(inp.toLocaleLowerCase() == "e") {
+                    selectedPhrase.guessList.push(inp)
+                    selectedPhrase.filled = singleCharConfig(9, "e", selectedPhrase.filled)
+                    selectedPhrase.filled = checkWin(selectedPhrase.filled, selectedPhrase.blankList)
+                }
+
+                // Guess whole phrase
+                else if(inp.toLocaleLowerCase() == "candy cane")
+                {
+                    blanksList[0].innerHTML = "C"
+                    blanksList[1].innerHTML = "a"
+                    blanksList[2].innerHTML = "n"
+                    blanksList[3].innerHTML = "d"
+                    blanksList[4].innerHTML = "y"
+
+                    blanksList[6].innerHTML = "C"
+                    blanksList[7].innerHTML = "a"
+                    blanksList[8].innerHTML = "n"
+                    blanksList[9].innerHTML = "e"
+
 
                     runWin()
                 }
@@ -834,7 +1099,9 @@ body.addEventListener("keypress", (KeyboardEvent) => {
     var keyName = KeyboardEvent.key
     if (keyName == "Enter") // Check that key is Enter
     {
-        gameRun()
+        if(selectedPhrase != "" || selectedPhrase != null) {
+            gameRun()
+        }
     }
 })
 

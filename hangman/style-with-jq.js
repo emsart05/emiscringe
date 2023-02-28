@@ -4,11 +4,18 @@ var blanks = $("#blanks")
 var numOfBlanks = $("#numOfBlanks")
 var peopleCheck = $("#peopleCheck")
 
+if($("#sections").css("flex-direction") == "column") {
+    $("#mainHead").text("Choose a category at the top")
+}
+else {
+    $("#mainHead").text("Choose a category on the left")
+}
+
 numOfBlanks.css("z-index", "-2")
 numOfBlanks.css("font-size", "1px")
 
 // When category is clicked
-cat.click(function() 
+cat.on("click", function() 
 {
     // Screen width <= 750px
     if($(window).width() <= 750)
@@ -35,7 +42,6 @@ cat.click(function()
     // Screen width > 800px
     else if($(window).width() > 800)
     {
-        console.log(1)
         if(peopleCheck.is(':disabled'))
         {
             // Phrase is 10 or more characters
@@ -66,3 +72,4 @@ $(document).ready(function()
         invis.html("mmmmmmmmmmmm")
     }
 })
+

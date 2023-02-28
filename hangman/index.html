@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Icon -->
-    <link rel="icon" href="https://i.pinimg.com/564x/97/3e/bc/973ebc4d297e1c3f62dede8efcad85a4.jpg">
+    <link rel="icon" href="icon.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- meta -->
@@ -21,30 +21,34 @@
     <div id="sections">
         <div id="category">
             <h1 id="catTitle">Choose a category</h1>
+            <br>
 
             <!-- Checkboxes -->
             <form id="chooseCat">
                 <!-- Items -->
-                <input type="checkbox" value="items" name="items" id="itemsCheck">
-                <label for="items" class="catChoice">Items</label>
+                <div class="choice-box">
+                    <input type="checkbox" value="items" name="items" id="itemsCheck" class="checkbox">
+                    <label for="items" class="catChoice">Items</label>
+                </div>
                 <br>
                 <!-- Places -->
-                <input type="checkbox" value="places" name="places" id="placesCheck">
-                <label for="places" class="catChoice">Places</label>
+                <div class="choice-box">
+                    <input type="checkbox" value="places" name="places" id="placesCheck" class="checkbox">
+                    <label for="places" class="catChoice">Places</label>
+                </div>
                 <br>
                 <!-- People -->
-                <input type="checkbox" value="people" name="people" id="peopleCheck">
-                <label for="people" class="catChoice">People</label>
+                <div class="choice-box">
+                    <input type="checkbox" value="people" name="people" id="peopleCheck" class="checkbox">
+                    <label for="people" class="catChoice">People</label>
+                </div>
             </form>
         </div>
 
         <!-- Main game box -->
         <div id="main">
-            <!-- Invisible text for spacing -->
-            <h2 id="invis">mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm</h2>
-            
             <!-- Header -->
-            <h1 id="mainHead">Choose a category on the left.</h1>
+            <h1 id="mainHead"></h1>
             
             <!-- Hint -->
             <p id="hint"></p>
