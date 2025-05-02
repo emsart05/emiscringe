@@ -1,0 +1,40 @@
+
+body {
+    background-image: url("images/bgblur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Scrollbar */
+::webkit-scrollbar {
+    width: 10px;
+}
+::webkit-scrollbar-track {
+    background: rgb(255, 192, 220);
+}
+::webkit-scrollbar-thumb {
+    background: rgb(195, 139, 164);
+}
+::webkit-scrollbar-thumb:hover {
+    background: rgb(167, 106, 133);
+}
+
+/* Nav bar */
+#navbar {
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 8px ridge rgb(238, 153, 191);
+    background-color: rgb(255, 192, 220);
+    box-shadow: 0px 0px 12px 4px rgb(123, 72, 95);
+}
+
+.nav-link {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}

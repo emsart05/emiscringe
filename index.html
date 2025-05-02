@@ -3,15 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>under construction</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/shared.css">
+    <!-- Icon -->
+    <link rel="icon" href="images/favicon.ico">
+    <title>♡ emiscringe ♡</title>
 </head>
-<style>
-    .class {
-        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-    }
-</style>
 <body>
-    <h1 class="class">This page is currently under construction.</h1><br>
-    <p class="class">This page is being completely stripped and redesigned.</p>
+    <img class="konata" src="images/65429695d5aeebe7a488acc5c5093736-removebg-preview.png">
+
+    <!-- Nav bar -->
+    <nav id="navbar">
+        <a class="nav-link" href="albums.html" onclick="navclick()">Fav albums</a>
+        <a class="nav-link" href="entries.html">Entrys</a>
+    </nav>
+
+    <div id="main">
+        <div id="hidden" style="display:none;"></div>
+
+        <div id="left" class="flex-item">
+            <!-- Heading -->
+            <h1 id="welcome">Welcome to my space!</h1>
+
+            <!-- About me -->
+            <div id="blurb-box">
+                <h2 id="blurb-head">About me</h2>
+                <p id="blurb">
+                    I'm a 19 year old with experience making my own websites. I've used HTML, CSS, and Javascript; entirely self-taught using the internet. 
+                    The code for this whole site was written by me.
+                    On the side are come cool little widgets I've cooked up, and a few of my childhood pics. 
+                </p>
+            </div><br>
+
+            <!-- Links -->
+            <div id="links-box">
+                <h2 id="links-head">↓ My links ↓</h2>
+                <p><a class="link" href="https://www.instagram.com/em.is.cringe/">Instagram</a>: em.is.cringe</p><br>
+                <p><a class="link" href="https://www.pinterest.com/dirtytoeuwu/">Pinterest</a>: dirtytoeuwu</p><br>
+                <p><a class="link" href="https://www.youtube.com/@thesillymuncher5963">YouTube</a>: the silly muncher</p><br>
+                <p><a class="link" href="https://spacehey.com/emiscringe">SpaceHey</a>: emiscringe</p><br>
+            </div>
+
+            <!-- Change Log -->
+            <div id="change-log">
+                <h1 id="log-head">Change log</h1>
+                <p>Most recent website update: 5/1/25</p>
+                <label name="changes">Previous updates:</label>
+                <!-- <li for="changes"></li> -->
+            </div>
+        </div>
+
+        <!-- Konata GIF w/ sounds -->
+        <div id="center" class="flex-item">
+            <img id="konata-gif" src="images/luckystar-konataizumi.gif" onclick="navclick()">
+            <button id="b1" onclick="b1Click()">Click Me!</button><br>
+            <forum>
+                <input type="text" id="video-url" placeholder="Paste URL here">
+                <button id="submit" onclick="submit()">Submit</button>
+            </forum><br>
+        </div>
+        <!-- width="500" height="315" -->
+
+        <!-- Images -->
+        <div id="right" class="flex-item">
+            <img src="images/IMG_3532.JPG" class="side-img glow">
+            <img src="images/IMG_1298.JPG" class="side-img glow">
+            <img src="images/IMG_1389.JPG" class="side-img glow">
+        </div>
+    </div>
+
 </body>
+<script src="js/index.js"></script>
 </html>
