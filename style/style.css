@@ -2,15 +2,22 @@
 
 
 #main {
-    width:98%;
+    width:80%;
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
+    justify-content: center;
+    gap: 20%;
+    justify-self: center;
+    padding: 15px;
     color: rgb(50, 32, 45);
     font-family: "Mystery Quest", serif;
+    background-color: rgba(255, 194, 229, 0.359);
+    animation-name: hovering;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
 }
 #left {
+    width: 40%;
     border:3px black;
 }
 #right {
@@ -18,24 +25,17 @@
     gap: 5px;
 }
 
-#blurb-box {
-    font-family: "Mystery Quest", serif;
-}
+#blurb-box {font-family: "Mystery Quest", serif;}
 
 #blurb-box, #links-box, #welcome, #change-log {
     padding: 10px;
-    border: 8px ridge rgb(238, 153, 191);
-    background-color: rgb(255, 192, 220);
+    border: 8px ridge rgba(238, 153, 191, 0.6);
+    background-color: rgba(255, 192, 220, 0.5);
     box-shadow: 0px 0px 12px 4px rgb(123, 72, 95);
 }
 
-#change-log {
-    margin-top: 20px;
-}
+#change-log {margin-top: 20px;}
 
-#konata-gif {
-    width: 30%;
-}
 
 .link {
     margin: 10px 5px 10px 5px;
@@ -45,13 +45,11 @@
 .side-img {
     align-self: flex-end;
     justify-content: right;
-    width: 80%;
-    border: 8px ridge rgb(238, 153, 191);
+    width: 90%;
+    border: 8px ridge rgba(238, 153, 191, 0.6);
 }
 
-.flex-item {
-    width: 30%;
-}
+.flex-item {width: 25%;}
 
 .glow {
     margin-bottom: 30px;
@@ -60,7 +58,7 @@
 
 p {
     margin: 0px;
-    padding: 0px;
+    padding: 0px 0px 10px 0px;
 }
 
 .konata {
@@ -68,29 +66,17 @@ p {
     position: fixed;
     bottom: -18px;
     right: 0px;
+    z-index: 1;
 }
 
-#b1 {
-    width: 20%;
-    font-size: 15px;
-    padding: 5px, 8px;
-    border-radius: 5px;
-    border: 2px solid rgb(97, 120, 71);
-    background: linear-gradient(90deg,rgba(190, 232, 162, 1) 0%, rgba(141, 191, 84, 1) 50%, rgba(180, 237, 187, 1) 100%);
+@keyframes hovering {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
-#b1:hover {
-    background: linear-gradient(90deg,rgba(160, 209, 128, 1) 0%, rgba(130, 184, 68, 1) 50%, rgba(140, 212, 149, 1) 100%);
-}
-
-#center {
-    display: flex;
-    flex-direction: column;
-}
-
-#video {
-    width: 100%;
-    height: 30%;
-    border: 5px ridge rgb(238, 153, 191);
-    box-shadow: 0px 0px 12px 6px rgb(123, 72, 95);
-}
-

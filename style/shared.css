@@ -7,6 +7,10 @@ body {
     background-attachment: fixed;
 }
 
+#konata, #navbar, #main * {
+    filter: brightness(103%) contrast(95%) saturate(90%);
+}
+
 /* Scrollbar */
 ::webkit-scrollbar {
     width: 10px;
@@ -23,12 +27,15 @@ body {
 
 /* Nav bar */
 #navbar {
+    width: 80%;
+    justify-self: center !important;
     padding: 5px;
     font-size: 18px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    border-radius: 15px !important;
     border: 8px ridge rgb(238, 153, 191);
     background-color: rgb(255, 192, 220);
     box-shadow: 0px 0px 12px 4px rgb(123, 72, 95);
