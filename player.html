@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style -->
+    <link rel="stylesheet" href="style/shared.css">
+    <link rel="stylesheet" href="style/player.css">
+    <link rel="stylesheet" href="style/mobile-player.css">
+    <!-- Icon -->
+    <link rel="icon" href="images/favicon.ico">
+    <title>♡ YouTube Player ♡</title>
+</head>
+<body>
+    <!-- Nav bar -->
+    <nav id="navbar">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="albums.html">Fav albums</a>
+    </nav>
+
+    <!-- Hidden box for popup to be placed in & vines -->
+    <div id="hidden" style="display:none;"></div>
+    <img class="vines" id="vines-left" src="images/vines.png">
+    <img class="vines" id="vines-right" src="images/vines.png">
+
+    <div id="main">
+        <!-- Konata GIF w/ sounds -->
+        <div id="widgets" class="inner-box">
+            <img id="konata-gif" src="images/luckystar-konataizumi.gif" onclick="konataClick()">
+            <button id="b1" onclick="b1Click()">Click Me!</button><br>
+        </div>
+
+        <!-- Video player -->
+        <div id="player-box" class="inner-box">
+            <forum>
+                <input type="text" id="video-id" placeholder="YouTube video ID">
+                <button id="submit" onclick="submit()">Submit</button>
+            </forum><br>
+            <iframe id="player" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        </div>
+    </div>
+    <!-- width="560" height="315" -->
+    
+</body>
+<script src="js/player.js"></script>
+</html>

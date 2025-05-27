@@ -6,6 +6,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/shared.css">
+    <link rel="stylesheet" href="style/mobile-home.css">
     <!-- Icon -->
     <link rel="icon" href="images/favicon.ico">
     <title>♡ emiscringe ♡</title>
@@ -16,11 +17,10 @@
     <!-- Nav bar -->
     <nav id="navbar">
         <a class="nav-link" href="albums.html" onclick="navclick()">Fav albums</a>
-        <a class="nav-link" href="entries.html">Entrys</a>
+        <a class="nav-link" href="player.html">YT Player</a>
     </nav>
 
     <div id="main">
-        <div id="hidden" style="display:none;"></div>
 
         <div id="left" class="flex-item">
             <!-- Heading -->
@@ -32,7 +32,7 @@
                 <p id="blurb">
                     I'm a 19 year old with experience making my own websites. I've used HTML, CSS, and Javascript; entirely self-taught using the internet. 
                     The code for this whole site was written by me.
-                    On the side are come cool little widgets I've cooked up, and a few of my childhood pics. 
+                    On the side are a few of my childhood pics. 
                 </p>
             </div><br>
 
@@ -48,22 +48,11 @@
             <!-- Change Log -->
             <div id="change-log">
                 <h1 id="log-head">Change log</h1>
-                <p>Most recent website update: 5/1/25</p>
-                <label name="changes">Previous updates:</label>
-                <!-- <li for="changes"></li> -->
+                <p><b>Most recent website update:</b> 5/26/25 Moved YouTube player and widgets to separate page. Player is now functional. Several design changes made to all pages. Mobile layout added.</p>
+                <label name="changes" id="update-head"><b>Previous updates:</b></label>
+                <li for="changes">5/1/25 Change details: Initial reupload of the website.</li>
             </div>
         </div>
-
-        <!-- Konata GIF w/ sounds -->
-        <div id="center" class="flex-item">
-            <img id="konata-gif" src="images/luckystar-konataizumi.gif" onclick="navclick()">
-            <button id="b1" onclick="b1Click()">Click Me!</button><br>
-            <forum>
-                <input type="text" id="video-url" placeholder="Not functional yet">
-                <button id="submit">Submit</button>
-            </forum><br>
-        </div>
-        <!-- width="500" height="315" -->
 
         <!-- Images -->
         <div id="right" class="flex-item">
