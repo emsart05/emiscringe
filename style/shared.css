@@ -45,3 +45,9 @@ body {
     font-family: 'Courier New', Courier, monospace;
     color: black;
 }
+
+@media (max-width: 500px) {
+    #navbar {
+        width: 92%;
+    }
+}

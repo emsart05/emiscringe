@@ -34,7 +34,16 @@
     box-shadow: 0px 0px 12px 4px rgb(123, 72, 95);
 }
 
-#change-log {margin-top: 20px;}
+#change-log {
+    margin-top: 20px;
+}
+
+/* ul {
+    list-style-type: "+";
+} */
+/* li:before {
+    content: "+";
+} */
 
 
 .link {

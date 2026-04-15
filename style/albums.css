@@ -5,25 +5,27 @@
     flex-direction: row;
     flex-wrap: wrap;
     grid-row: 1/3;
+    justify-content: center;
 }
 
 #main-music {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
 #blurbs p {
-    width: 90%;
+    width: 50%;
     padding: 10px;
     margin-right: 10px;
     background-color: rgba(240, 181, 220, 0.582);
     font-family: "Mystery Quest", serif;
-    font-size: 18px;
+    font-size: 1.3em;
+    box-shadow: 8px 8px 12px rgb(188, 188, 188)
 }
 
 .stars-gif {
-    width:80%;
+    width:10%;
     margin:0px;
     padding:0px;
     transform: rotate(270deg);
@@ -32,8 +34,15 @@
 .center-item {
     margin-left: 30px;
     margin-bottom: 30px;
-    width: 40% !important;
+    width: 25%;
     filter: opacity(92%);
     border: 8px ridge rgb(238, 153, 191);
     border-radius: 22px !important;
+}
+
+#blurbs {
+    margin-bottom: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
 }
